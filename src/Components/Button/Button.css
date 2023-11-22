@@ -1,0 +1,29 @@
+.u-button span {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    letter-spacing: 0.143125rem;
+    font-weight: 700;
+    width: max-content;
+    cursor: pointer;
+}
+
+.u-button span::after {
+    content: "";
+    position: absolute;
+    bottom: -0.625rem;
+    left: 0;
+    width: 100%;
+    height: 0.125rem;
+    background-color: var(--accent-);
+    z-index: -10;
+}
+
+.u-button {
+    width: max-content;
+    color: var(--white-60-);
+}
+
+.u-button:hover {
+    color: var(--accent-);
+}

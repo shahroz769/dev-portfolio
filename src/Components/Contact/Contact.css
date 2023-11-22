@@ -1,0 +1,94 @@
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5.75rem;
+    gap: 3rem;
+}
+
+.contact > div,
+form {
+    width: 40%;
+    min-width: 330px;
+}
+
+.contact-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.qoute {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.qoute input:not(.submit-btn),
+.qoute textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0.25rem 1rem 1rem 1rem;
+    border-bottom: 1px solid var(--white-60-);
+}
+
+.qoute input:not(.submit-btn):focus,
+.qoute textarea:focus {
+    border-bottom: 1px solid var(--accent-);
+}
+
+.qoute textarea {
+    height: 110px;
+    resize: none;
+}
+
+.btn {
+    width: max-content;
+    align-self: flex-end;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    letter-spacing: 0.143125rem;
+    font-weight: 700;
+    color: var(--white-60-);
+}
+.btn .submit-btn {
+    border: none;
+    outline: none;
+    padding-bottom: 0.425rem;
+    border-bottom: 0.125rem solid var(--accent-);
+    cursor: pointer;
+    width: max-content;
+    background-color: transparent;
+    text-align: left;
+}
+.btn .submit-btn:hover {
+    color: var(--accent-);
+}
+
+@media (width <=768px) {
+    .contact {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact > div,
+    form {
+        max-width: 445px;
+        width: 100%;
+    }
+    .contact-body {
+        gap: 1.25rem;
+    }
+    .contact-body > *{
+        text-align: center;
+    }
+}
+
+@media (width <=768px) {
+.contact > div,
+form {
+    min-width: auto;
+}
+}

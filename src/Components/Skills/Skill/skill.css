@@ -1,0 +1,12 @@
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.875rem;
+}
+
+@media (width<=400px) {
+    .skill {
+        align-items: center;
+    }
+}

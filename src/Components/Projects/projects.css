@@ -1,0 +1,31 @@
+.projects-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects-container .body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5rem;
+    row-gap: 4.375rem;
+}
+
+.projects-container .body .project {
+    flex-basis: 48.65%;
+}
+
+@media (width<=700px) {
+    .projects-container .body {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .projects-container .body .project {
+        max-width: 450px;
+        width: 100%;
+    }
+}
