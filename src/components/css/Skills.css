@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 3.625rem;
-    margin-bottom: 8.75rem;
+    margin-bottom: 7.75rem;
 }
 
 .skills-container .skill {
@@ -14,13 +14,16 @@
     .skills-container .skill {
         flex-basis: calc(100% / 2);
     }
+    .skills-container {
+        margin-bottom: 5.25rem;
+    }
 }
 @media (width<=768px) {
     .skills-container {
         padding-top: 3.25rem;
         row-gap: 3.25rem;
     }
-    .body{
+    .body {
         flex-direction: column;
     }
 }
