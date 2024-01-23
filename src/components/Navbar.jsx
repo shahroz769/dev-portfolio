@@ -5,28 +5,32 @@ import twitterIcon from "@assets/twitter.svg";
 import whatsappIcon from "@assets/whatsapp.svg";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 
 const Navbar = ({ profileImageBoolean, bottom }) => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
     const [src, setSrc] = useState();
-    useEffect(() => {
+
+    const updateImageSrc = useCallback(() => {
         if (window.innerWidth > 768) {
-            setSrc(
-                "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-desktop_zn5wf8.webp"
-            );
+            return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-desktop_zn5wf8.webp";
         } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
-            setSrc(
-                "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-tablet_ltkoqr.webp"
-            );
-        } else if (window.innerWidth <= 600) {
-            setSrc(
-                "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-mobile_fzrenn.webp"
-            );
+            return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-tablet_ltkoqr.webp";
+        } else {
+            return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-mobile_fzrenn.webp";
         }
     }, []);
+
+    useEffect(() => {
+        setSrc(updateImageSrc());
+        function handleResize() {
+            setSrc(updateImageSrc());
+        }
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [updateImageSrc]);
     return (
         <header
             className="nav-header"
