@@ -3,7 +3,7 @@
     padding-top: 4.5rem;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 3.625rem;
+    row-gap: 1.625rem;
     margin-bottom: 7.75rem;
 }
 
@@ -21,7 +21,7 @@
 @media (width<=768px) {
     .skills-container {
         padding-top: 3.25rem;
-        row-gap: 3.25rem;
+        row-gap: 1.25rem;
     }
     .body {
         flex-direction: column;
@@ -30,6 +30,7 @@
 @media (width<=600px) {
     .skills-container {
         margin-bottom: 4rem;
+        row-gap: 0.25rem;
     }
 }
 @media (width<=400px) {
