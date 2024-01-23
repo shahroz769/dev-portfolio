@@ -43,7 +43,7 @@ const Project = ({
                             onClick={(e) => {
                                 if (
                                     e.target.classList.contains(
-                                        "project-modal-container",
+                                        "project-modal-container"
                                     )
                                 ) {
                                     setShowProjectModal(false);
@@ -73,27 +73,19 @@ const Project = ({
                                         </h3>
                                     </Reveal>
                                     <div className="project-techs modal-project-techs">
-                                        {techs.map((tech, ind) => (
-                                            <Fragment key={ind}>
-                                                <Reveal>
-                                                    <p
-                                                        onMouseEnter={() =>
-                                                            mouseEnterHandler(
-                                                                "small",
-                                                            )
-                                                        }
-                                                        onMouseLeave={
-                                                            mouseLeaveHandler
-                                                        }
-                                                        style={{
-                                                            cursor: "default",
-                                                        }}
-                                                    >
-                                                        {tech}
-                                                    </p>
-                                                </Reveal>
-                                            </Fragment>
-                                        ))}
+                                        <Reveal>
+                                            <p
+                                                onMouseEnter={() =>
+                                                    mouseEnterHandler("small")
+                                                }
+                                                onMouseLeave={mouseLeaveHandler}
+                                                style={{
+                                                    cursor: "default",
+                                                }}
+                                            >
+                                                {techs}
+                                            </p>
+                                        </Reveal>
                                     </div>
                                     <div className="project-modal-description">
                                         {
@@ -101,7 +93,7 @@ const Project = ({
                                                 <p
                                                     onMouseEnter={() =>
                                                         mouseEnterHandler(
-                                                            "small",
+                                                            "small"
                                                         )
                                                     }
                                                     onMouseLeave={
@@ -218,21 +210,15 @@ const Project = ({
                         </div>
                     </div>
                     <div className="project-techs">
-                        {techs.map((tech, ind) => (
-                            <Fragment key={ind}>
-                                <Reveal>
-                                    <p
-                                        onMouseEnter={() =>
-                                            mouseEnterHandler("small")
-                                        }
-                                        onMouseLeave={mouseLeaveHandler}
-                                        style={{ cursor: "default" }}
-                                    >
-                                        {tech}
-                                    </p>
-                                </Reveal>
-                            </Fragment>
-                        ))}
+                        <Reveal>
+                            <p
+                                onMouseEnter={() => mouseEnterHandler("small")}
+                                onMouseLeave={mouseLeaveHandler}
+                                style={{ cursor: "default" }}
+                            >
+                                {techs}
+                            </p>
+                        </Reveal>
                     </div>
                     <div className="project-description">
                         <Reveal>

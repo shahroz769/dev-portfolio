@@ -12,7 +12,7 @@ const Skills = () => {
         { title: "NodeJS", exp: "3 Months Experience" },
         { title: "ExpressJS", exp: "3 Months Experience" },
         { title: "MongoDB", exp: "3 Months Experience" },
-        { title: "Framer Motion", exp: "2 Months Experience" },
+        { title: "Framer-Motion", exp: "2 Months Experience" },
     ];
     return (
         <div className="skills-container">
