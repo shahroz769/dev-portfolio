@@ -9,7 +9,6 @@
 
 .skills-container .skill {
     flex-basis: calc(100% / 3);
-    cursor: pointer;
 }
 
 @media (width<=800px) {

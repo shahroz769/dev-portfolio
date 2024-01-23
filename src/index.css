@@ -1,20 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap");
 
 :root {
-    font-family: "Space Grotesk", Inter, system-ui, Avenir, Helvetica, Arial,
-        sans-serif;
-
-    /* font-synthesis: none; */
+    font-family: "Space Grotesk", sans-serif;
     text-rendering: optimizeLegibility;
-    /* -webkit-font-smoothing: antialiased; */
-    /* -moz-osx-font-smoothing: grayscale; */
-    /* -webkit-text-size-adjust: 100%; */
-
-    --black-60-: #151515;
-    --black-30-: #242424;
+    --black-60-: #111111;
+    --black-30-: #232323;
     --white-60-: #ffffff;
     --white-30-: #d9d9d9;
-    --accent-: #4ee1a0;
+    --white-10-: #868686;
+    --accent-: #0aff9d;
+}
+
+::selection {
+    background-color: var(--accent-);
+    color: var(--black-30-);
 }
 
 *,
@@ -27,6 +26,23 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+.custom-mouse {
+    width: 32px;
+    height: 32px;
+    background-color: var(--accent-);
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    border-radius: 50%;
+}
+
+input,
+textarea {
+    width: 100%;
 }
 
 input::placeholder,
@@ -122,6 +138,43 @@ p {
     font-size: 1.125rem;
     line-height: 1.75rem;
     color: var(--white-30-);
+}
+
+@media (hover: hover) {
+    /* ----- Scrollbar Styles For Firefox ----- */
+    * {
+        scrollbar-color: var(--white-30-) var(--white-10-);
+        scrollbar-width: thin;
+    }
+
+    *::-moz-scrollbar {
+        width: 8px;
+    }
+
+    *::-moz-scrollbar-thumb {
+        background-color: var(--white-30-);
+        border-radius: 4px;
+    }
+
+    *::-moz-scrollbar-track {
+        background-color: var(--white-10-);
+    }
+
+    /* ----- Scrollbar Styles For Other Browsers ----- */
+    *::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: var(--white-10-);
+    }
+
+    *::-webkit-scrollbar {
+        width: 8px;
+        background-color: var(--white-10-);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: var(--white-30-);
+    }
 }
 
 @media (width <=768px) {
