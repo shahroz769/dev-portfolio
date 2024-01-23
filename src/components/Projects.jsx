@@ -33,7 +33,7 @@ const Projects = () => {
             img: "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,c_fill,w_700,h_445/v1705946705/Portfolio%20Projects/tic_tac_toe_vgtt6o.jpg",
             project: "https://shahroz769.github.io/tic-tac-toe",
             code: "https://github.com/shahroz769/tic-tac-toe",
-            techs: ["HTML", "CSS", "JAVASCRIPT", "FIREBASE"],
+            techs: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
             shortDescription:
                 "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
             longDescription:
@@ -66,7 +66,7 @@ const Projects = () => {
             img: "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,c_fill,w_700,h_445/v1705946706/Portfolio%20Projects/planets_f29f2r.jpg",
             project: "https://shahroz769.github.io/Planets-website",
             code: "https://github.com/shahroz769/Planets-website",
-            techs: ["HTML", "CSS", "JAVASCRIPT"],
+            techs: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
             shortDescription:
                 "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
             longDescription:
@@ -77,7 +77,7 @@ const Projects = () => {
             img: "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,c_fill,w_700,h_445/v1705946704/Portfolio%20Projects/bmi_uw2ush.jpg",
             project: "https://shahroz769.github.io/BMI-Calculator",
             code: "https://github.com/shahroz769/BMI-Calculator",
-            techs: ["HTML", "CSS"],
+            techs: ["HTML", "CSS", "JAVASCRIPT"],
             shortDescription:
                 "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
             longDescription:
@@ -88,7 +88,7 @@ const Projects = () => {
             img: "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,c_fill,w_700,h_445/v1705946704/Portfolio%20Projects/password_generator_zsm7dz.jpg",
             project: "https://shahroz769.github.io/random-password-generator",
             code: "https://github.com/shahroz769/random-password-generator",
-            techs: ["HTML", "CSS"],
+            techs: ["HTML", "CSS", "JAVASCRIPT"],
             shortDescription:
                 "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
             longDescription:
@@ -99,7 +99,7 @@ const Projects = () => {
             img: "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,c_fill,w_700,h_445/v1705946704/Portfolio%20Projects/age_rkhg21.jpg",
             project: "https://shahroz769.github.io/age-calculator",
             code: "https://github.com/shahroz769/age-calculator",
-            techs: ["HTML", "CSS"],
+            techs: ["HTML", "CSS", "JAVASCRIPT"],
             shortDescription:
                 "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
             longDescription:
