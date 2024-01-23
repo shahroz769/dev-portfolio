@@ -24,6 +24,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
     }, []);
 
     useEffect(() => {
+        console.log("chala");
         setSrc(updateImageSrc());
         function handleResize() {
             setSrc(updateImageSrc());
