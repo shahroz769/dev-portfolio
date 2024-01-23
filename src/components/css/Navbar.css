@@ -38,6 +38,10 @@
     .nav-profile-image {
         right: -5%;
     }
+
+    .nav-header .icons {
+        padding-right: 0;
+    }
 }
 
 @media (width<=800px) {
