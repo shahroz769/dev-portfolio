@@ -1,8 +1,8 @@
 import "@components/css/Project.css";
 import IconGithub from "@assets/jsx/github";
 import IconUrl from "@assets/jsx/url";
-import { Fragment, useContext, useEffect, useState } from "react";
-import { CursorContext } from "../context/CursorContext";
+import { useContext, useEffect, useState } from "react";
+import { CursorContext } from "@context/CursorContext";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@components/Reveal";
 

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { CursorContext } from "./context/CursorContext";
+import { CursorContext } from "@context/CursorContext";
 import { motion } from "framer-motion";
 import Home from "@pages/Home";
 
@@ -8,10 +8,10 @@ function App() {
     const [systemTheme, setSystemTheme] = useState(
         window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
-            : "light",
+            : "light"
     );
     const [hasPointingDevice, setHasPointingDevice] = useState(
-        window.matchMedia("(pointer:fine)").matches,
+        window.matchMedia("(pointer:fine)").matches
     );
     useEffect(() => {
         const favicon = document.getElementById("favicon");
@@ -34,13 +34,13 @@ function App() {
         };
         pointingDeviceQuery.addEventListener(
             "change",
-            handlePointingDeviceChange,
+            handlePointingDeviceChange
         );
         return () => {
             mediaQuery.removeEventListener("change", handleChange);
             pointingDeviceQuery.removeEventListener(
                 "change",
-                handlePointingDeviceChange,
+                handlePointingDeviceChange
             );
         };
     }, []);

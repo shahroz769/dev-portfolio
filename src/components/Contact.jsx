@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "@components/css/Contact.css";
 import { useContext } from "react";
-import { CursorContext } from "../context/CursorContext";
+import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 
 const Contact = () => {

@@ -6,7 +6,7 @@ import whatsappIcon from "@assets/whatsapp.svg";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useContext } from "react";
-import { CursorContext } from "../context/CursorContext";
+import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 
 const Navbar = ({ profileImageBoolean, bottom }) => {

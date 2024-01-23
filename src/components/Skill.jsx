@@ -1,6 +1,6 @@
 import "@components/css/Skill.css";
 import { useContext } from "react";
-import { CursorContext } from "../context/CursorContext";
+import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 
 const Skill = ({ title, exp }) => {
