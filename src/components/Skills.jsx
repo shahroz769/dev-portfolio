@@ -8,11 +8,11 @@ const Skills = () => {
         { title: "Javascript", exp: "6 Months Experience" },
         { title: "Firebase", exp: "6 Months Experience" },
         { title: "GSAP", exp: "6 Months Experience" },
-        { title: "ReactJS", exp: "6 Months Experience" },
-        { title: "NodeJS", exp: "6 Months Experience" },
-        { title: "ExpressJS", exp: "6 Months Experience" },
-        { title: "MongoDB", exp: "6 Months Experience" },
-        { title: "Framer Motion", exp: "6 Months Experience" },
+        { title: "ReactJS", exp: "3 Months Experience" },
+        { title: "NodeJS", exp: "3 Months Experience" },
+        { title: "ExpressJS", exp: "3 Months Experience" },
+        { title: "MongoDB", exp: "3 Months Experience" },
+        { title: "Framer Motion", exp: "2 Months Experience" },
     ];
     return (
         <div className="skills-container">
