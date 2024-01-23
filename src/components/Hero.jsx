@@ -23,7 +23,7 @@ const Hero = () => {
                 <div className="hero-title">
                     <Reveal>
                         <h1
-                            style={{ lineHeight: "6.5rem", cursor: "default" }}
+                            style={{ cursor: "default" }}
                             onMouseEnter={() => mouseEnterHandler("large")}
                             onMouseLeave={mouseLeaveHandler}
                         >
