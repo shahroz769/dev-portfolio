@@ -9,23 +9,37 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 5rem;
-    row-gap: 4.375rem;
+    row-gap: 4.25rem;
 }
 
 .projects-container .body .project {
-    flex-basis: 48.65%;
+    flex-basis: 48%;
+}
+
+@media (width<=870px) {
+    .projects-container .body {
+        margin-top: 3.75rem;
+    }
 }
 
 @media (width<=700px) {
-    .projects-container .body {
+    .projects-container {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
         flex-direction: column;
     }
 
     .projects-container .body .project {
-        max-width: 450px;
         width: 100%;
+    }
+}
+
+@media (width<=600px) {
+    .projects-container .body {
+        margin-top: 2.5rem;
+    }
+
+    .projects-container .body {
+        row-gap: 2.5rem;
     }
 }

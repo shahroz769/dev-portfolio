@@ -10,19 +10,23 @@
 .skills-container .skill {
     flex-basis: calc(100% / 3);
 }
-
-@media (width<=800px) {
-    .skills-container {
-        margin-bottom: 6.25rem;
-    }
-}
-@media (width<=768px) {
+@media (width<=870px) {
     .skills-container .skill {
         flex-basis: calc(100% / 2);
     }
+}
+@media (width<=768px) {
     .skills-container {
         padding-top: 3.25rem;
         row-gap: 3.25rem;
+    }
+    .body{
+        flex-direction: column;
+    }
+}
+@media (width<=600px) {
+    .skills-container {
+        margin-bottom: 4rem;
     }
 }
 @media (width<=400px) {

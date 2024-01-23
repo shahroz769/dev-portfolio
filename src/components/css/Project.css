@@ -75,6 +75,7 @@
     cursor: pointer;
     background: #1d1d1d40;
 }
+
 .project-modal {
     width: 100%;
     max-width: 700px;
@@ -89,11 +90,9 @@
 
 .project-modal-image {
     width: 100%;
-    height: 445px;
 }
 .project-modal-image img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 0.5rem 0.5rem 0 0;
 }
@@ -138,4 +137,17 @@
 .project-modal-links > a p {
     font-size: 1rem;
     color: var(--accent-);
+}
+
+@media (width <=768px) {
+    .project-modal-container {
+        padding: 1.2rem;
+    }
+}
+
+@media (width <=400px) {
+    .project-modal-links{
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
