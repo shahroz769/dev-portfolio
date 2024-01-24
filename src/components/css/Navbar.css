@@ -72,3 +72,8 @@
         height: 500px;
     }
 }
+
+.nav-profile-image{
+    background-size: cover;
+    background-position: center;
+}

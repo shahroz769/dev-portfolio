@@ -19,7 +19,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
         } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
             return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-tablet_ltkoqr.webp";
         } else {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/v1706038916/image-profile-mobile_rbg44m.jpg";
+            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706038916/image-profile-mobile_rbg44m.jpg";
         }
     }, []);
 
