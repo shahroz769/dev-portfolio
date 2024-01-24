@@ -21,7 +21,6 @@ form {
 .qoute {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
 }
 
 .qoute input:not(.submit-btn),
@@ -66,6 +65,14 @@ form {
     color: var(--accent-);
 }
 
+.error-message {
+    color: var(--error-);
+    font-weight: 500;
+    font-size: 12px;
+    align-self: flex-end;
+    visibility: hidden;
+}
+
 @media (width <=768px) {
     .contact {
         flex-direction: column;
@@ -81,14 +88,14 @@ form {
     .contact-body {
         gap: 1.25rem;
     }
-    .contact-body > *{
+    .contact-body > * {
         text-align: center;
     }
 }
 
 @media (width <=768px) {
-.contact > div,
-form {
-    min-width: auto;
-}
+    .contact > div,
+    form {
+        min-width: auto;
+    }
 }

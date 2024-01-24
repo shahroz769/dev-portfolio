@@ -1,14 +1,60 @@
-import { useState } from "react";
 import "@components/css/Contact.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Contact = () => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
-    const [qouteName, setQouteName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+
+    const contactSchema = yup.object().shape({
+        name: yup.string().max(50).required("Required"),
+        email: yup.string().email("Invalid email").max(50).required("Required"),
+        message: yup.string().max(500).required("Required"),
+    });
+
+    const {
+        values,
+        errors,
+        handleBlur,
+        handleChange,
+        handleSubmit,
+        resetForm,
+        touched,
+    } = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            message: "",
+        },
+        validationSchema: contactSchema,
+        onSubmit: (values, actions) => {
+            console.log(values);
+            sendMessage(values);
+        },
+    });
+    const sendMessage = () => {
+        const messagePromise = axios
+            .post("https://devv-invoice-cmui.onrender.com/portfolio/message", {
+                ...values,
+                portfolio: "shahrozahmed",
+            })
+            .then((response) => {
+                resetForm();
+            })
+            .catch((error) => {
+                console.log(error);
+                Promise.reject();
+            });
+        toast.promise(messagePromise, {
+            success: "Message sent!",
+            loading: "Sending...",
+            error: "Failed. Try again.",
+        });
+    };
 
     return (
         <div className="contact" id="contact">
@@ -34,43 +80,93 @@ const Contact = () => {
                     </p>
                 </Reveal>
             </div>
-            <form
-                onSubmit={(e) => {
-                    e.preventDefault();
-                }}
-                className="qoute"
-            >
-                <Reveal width="100%">
+            <form onSubmit={handleSubmit} className="qoute">
+                <Reveal width="100%" flexDirection="column">
                     <input
-                        onMouseEnter={() => mouseEnterHandler("small")}
-                        onMouseLeave={mouseLeaveHandler}
-                        onChange={(e) => setQouteName(e.target.value)}
-                        value={qouteName}
-                        name="user_name"
-                        type="text"
+                        style={
+                            errors.name &&
+                            touched.name && {
+                                borderBottom: "1px solid var(--error-)",
+                            }
+                        }
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        id="name"
+                        name="name"
                         placeholder="NAME"
+                        onMouseEnter={() => mouseEnterHandler("small")}
+                        onMouseLeave={mouseLeaveHandler}
                     />
+                    {
+                        <p
+                            className="error-message"
+                            style={
+                                errors.name &&
+                                touched.name && { visibility: "inherit" }
+                            }
+                        >
+                            {errors.name || "Required"}
+                        </p>
+                    }
                 </Reveal>
-                <Reveal width="100%">
+                <Reveal width="100%" flexDirection="column">
                     <input
-                        onMouseEnter={() => mouseEnterHandler("small")}
-                        onMouseLeave={mouseLeaveHandler}
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        type="email"
-                        name="user_email"
+                        style={
+                            errors.email &&
+                            touched.email && {
+                                borderBottom: "1px solid var(--error-)",
+                            }
+                        }
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        id="email"
+                        name="email"
                         placeholder="EMAIL"
-                    />
-                </Reveal>
-                <Reveal width="100%">
-                    <textarea
                         onMouseEnter={() => mouseEnterHandler("small")}
                         onMouseLeave={mouseLeaveHandler}
-                        onChange={(e) => setMessage(e.target.value)}
-                        value={message}
+                    />
+                    {
+                        <p
+                            className="error-message"
+                            style={
+                                errors.email &&
+                                touched.email && { visibility: "inherit" }
+                            }
+                        >
+                            {errors.email || "Required"}
+                        </p>
+                    }
+                </Reveal>
+                <Reveal width="100%" flexDirection="column">
+                    <textarea
+                        style={
+                            errors.message &&
+                            touched.message && {
+                                borderBottom: "1px solid var(--error-)",
+                            }
+                        }
+                        value={values.message}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        id="message"
                         name="message"
                         placeholder="MESSAGE"
+                        onMouseEnter={() => mouseEnterHandler("small")}
+                        onMouseLeave={mouseLeaveHandler}
                     />
+                    {
+                        <p
+                            className="error-message"
+                            style={
+                                errors.message &&
+                                touched.message && { visibility: "inherit" }
+                            }
+                        >
+                            {errors.message || "Required"}
+                        </p>
+                    }
                 </Reveal>
                 <Reveal>
                     <div className="btn">

@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CursorContext } from "@context/CursorContext";
+import { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import Home from "@pages/Home";
 
@@ -46,6 +47,15 @@ function App() {
     }, []);
     return (
         <>
+            <Toaster
+                toastOptions={{
+                    style: {
+                        background: "var(--white-60-)",
+                        color: "var(--black-30-)",
+                    },
+                    position: "bottom-center",
+                }}
+            />
             <Home />
             {hasPointingDevice && (
                 <motion.div
