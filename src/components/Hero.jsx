@@ -28,7 +28,8 @@ const Hero = () => {
                             onMouseLeave={mouseLeaveHandler}
                         >
                             Nice to meet you! I’m{" "}
-                            <span className="name">Shahroz</span>.
+                            <span className="name">Shahroz</span>
+                            <span style={{ color: "#0aff9d" }}>.</span>
                         </h1>
                     </Reveal>
                 </div>
