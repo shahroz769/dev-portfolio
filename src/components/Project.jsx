@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { CursorContext } from "@context/CursorContext";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "@components/Reveal";
+import crossIcon from "@assets/cross.svg";
 
 const Project = ({
     img,
@@ -57,8 +58,31 @@ const Project = ({
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 50 }}
                             >
-                                <div className="project-modal-image">
+                                <div
+                                    style={{ position: "relative" }}
+                                    className="project-modal-image"
+                                >
                                     <img src={img} alt="Project Image" />
+                                    <div
+                                        style={{
+                                            width: "1.6rem",
+                                            position: "absolute",
+                                            top: "12px",
+                                            right: "12px",
+                                            backgroundColor: "#0aff9d",
+                                            borderRadius: "50%",
+                                            cursor: "pointer",
+                                        }}
+                                        onClick={() => {
+                                            setShowProjectModal(false);
+                                        }}
+                                        onMouseEnter={() =>
+                                            mouseEnterHandler("small")
+                                        }
+                                        onMouseLeave={mouseLeaveHandler}
+                                    >
+                                        <img src={crossIcon} alt="Cross" />
+                                    </div>
                                 </div>
                                 <div className="project-modal-body">
                                     <Reveal>
