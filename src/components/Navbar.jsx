@@ -4,16 +4,17 @@ import linkedInIcon from "@assets/LinkedIn.svg";
 import twitterIcon from "@assets/twitter.svg";
 import whatsappIcon from "@assets/whatsapp.svg";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { useContext, useCallback } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
+import BlurUpImage from "@components/BlurUpImage";
 
 const Navbar = ({ profileImageBoolean, bottom }) => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
-    const [src, setSrc] = useState();
+    const [highSrc, setHighSrc] = useState();
+    const [lowSrc, setLowSrc] = useState();
 
-    const updateImageSrc = useCallback(() => {
+    const updateHighImageSrc = useCallback(() => {
         if (window.innerWidth > 768) {
             return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-desktop_zn5wf8.webp";
         } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
@@ -23,14 +24,27 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
         }
     }, []);
 
+    const updateLowImageSrc = useCallback(() => {
+        if (window.innerWidth > 768) {
+            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706103161/blur_profile_portfolio/image-profile-desktop_blur_vpibn5.jpg";
+        } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
+            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706103161/blur_profile_portfolio/image-profile-tablet_blur_wxjxek.jpg";
+        } else {
+            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706103161/blur_profile_portfolio/image-profile-mobile_blur_vozhjs.jpg";
+        }
+    }, []);
+
     useEffect(() => {
-        setSrc(updateImageSrc());
+        setHighSrc(updateHighImageSrc());
+        setLowSrc(updateLowImageSrc());
         function handleResize() {
-            setSrc(updateImageSrc());
+            setHighSrc(updateHighImageSrc());
+            setLowSrc(updateLowImageSrc());
         }
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [updateImageSrc]);
+    }, [updateHighImageSrc, updateLowImageSrc]);
+
     return (
         <header
             className="nav-header"
@@ -96,23 +110,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
             </div>
             {profileImageBoolean && (
                 <div className="nav-profile-image">
-                    <motion.img
-                        initial={{
-                            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-                            y: -100,
-                        }}
-                        animate={{
-                            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                            y: 0,
-                        }}
-                        transition={{
-                            ease: [0.83, 0, 0.17, 1],
-                            duration: 1.5,
-                        }}
-                        fetchpriority="high"
-                        src={src}
-                        alt="Profile Picture"
-                    />
+                    <BlurUpImage lowResSrc={lowSrc} highResSrc={highSrc} />
                 </div>
             )}
         </header>
