@@ -4,17 +4,32 @@ import linkedInIcon from "@assets/LinkedIn.svg";
 import twitterIcon from "@assets/twitter.svg";
 import whatsappIcon from "@assets/whatsapp.svg";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useContext, useCallback } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
-import BlurUpImage from "@components/BlurUpImage";
 
 const Navbar = ({ profileImageBoolean, bottom }) => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
-    const [highSrc, setHighSrc] = useState();
-    const [lowSrc, setLowSrc] = useState();
+    const [src, setSrc] = useState();
+    const [animationState, setAnimationState] = useState("hidden");
 
-    const updateHighImageSrc = useCallback(() => {
+    const handleImageLoad = useCallback(() => {
+        setAnimationState("visible");
+    }, []);
+
+    const imageVariants = {
+        hidden: {
+            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+            y: -100,
+        },
+        visible: {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            y: 0,
+        },
+    };
+
+    const updateImageSrc = useCallback(() => {
         if (window.innerWidth > 768) {
             return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-desktop_zn5wf8.webp";
         } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
@@ -24,27 +39,14 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
         }
     }, []);
 
-    const updateLowImageSrc = useCallback(() => {
-        if (window.innerWidth > 768) {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706103161/blur_profile_portfolio/image-profile-desktop_blur_vpibn5.jpg";
-        } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706103161/blur_profile_portfolio/image-profile-tablet_blur_wxjxek.jpg";
-        } else {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706103161/blur_profile_portfolio/image-profile-mobile_blur_vozhjs.jpg";
-        }
-    }, []);
-
     useEffect(() => {
-        setHighSrc(updateHighImageSrc());
-        setLowSrc(updateLowImageSrc());
+        setSrc(updateImageSrc());
         function handleResize() {
-            setHighSrc(updateHighImageSrc());
-            setLowSrc(updateLowImageSrc());
+            setSrc(updateImageSrc());
         }
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [updateHighImageSrc, updateLowImageSrc]);
-
+    }, [updateImageSrc]);
     return (
         <header
             className="nav-header"
@@ -110,7 +112,21 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
             </div>
             {profileImageBoolean && (
                 <div className="nav-profile-image">
-                    <BlurUpImage lowResSrc={lowSrc} highResSrc={highSrc} />
+                    <motion.img
+                        initial="hidden"
+                        animate={animationState}
+                        variants={imageVariants}
+                        transition={{
+                            ease: [0.83, 0, 0.17, 1],
+                            duration: 1.5,
+                        }}
+                        fetchpriority="high"
+                        src={src}
+                        alt="Profile Picture"
+                        onLoad={() => {
+                            handleImageLoad();
+                        }}
+                    />
                 </div>
             )}
         </header>
