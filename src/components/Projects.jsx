@@ -51,26 +51,26 @@ const Projects = () => {
                 "Dictionary Web App is a comprehensive tool for word enthusiasts. Using the Free Dictionary API, users can seamlessly search for words and access detailed responses. Enrich your vocabulary by listening to word pronunciations when available. Reading experience can be customized by switching between serif, sans serif, and monospace fonts or by switching to preferred color theme (light/dark). The app ensures an optimal layout, adapting seamlessly to your device's screen size.",
         },
         {
-            title: "DEV FINDER WEB APP",
+            title: "GITHUB USER SEARCH WEB APP",
             img: "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,c_fill,w_700,h_445/v1705946705/Portfolio%20Projects/dev_finder_vbmeid.jpg",
             project: "https://devs-devfinder.vercel.app",
             code: "https://github.com/shahroz769/Github-Devfinder",
             techs: "HTML CSS JAVASCRIPT",
             shortDescription:
-                "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+                "Discover GitHub profiles effortlessly with the GitHub User Search Web App. Search by username, explore user details, and personalize experience with light and dark themes.",
             longDescription:
-                "Pain.app is a real-time coaching app for students learning to paint. This app is my baby, designed and built on my own. The tech stack is based on top of Flutter for the mobile app, connected to a Python & FastAPI backend, with data stored in Postgres, deployed on Heroku. Because this isn't real, here's some gibberish to fill space :) Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quia officia odio nulla consectetur aperiam ad tempora magni magnam nesciunt. Fuga id sapiente facere ipsa eius exercitationem officiis deleniti, rerum dolorum. Deserunt soluta modi culpa animi.",
+                "Uncover GitHub user profiles with ease using the GitHub User Search Web App. Using HTML, CSS, and JavaScript, the app empowers users to search for GitHub users by their username. Receive relevant user information based on your search, facilitating seamless exploration of GitHub profiles. Personalize experience by switching between light and dark themes, ensuring a comfortable and visually appealing interface. The app is designed to adapt to the optimal layout based on device's screen size, providing a responsive and user-centric design.",
         },
         {
-            title: "PLANETS WEBSITE",
+            title: "PLANETS FACT WEBSITE",
             img: "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,c_fill,w_700,h_445/v1705946706/Portfolio%20Projects/planets_f29f2r.jpg",
             project: "https://devs-planets.vercel.app",
             code: "https://github.com/shahroz769/Planets-website",
             techs: "HTML CSS JAVASCRIPT GSAP",
             shortDescription:
-                "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+                "Embark on a celestial journey with the Planets Fact Site. Explore each planet, toggle information tabs, and enjoy captivating animations using GSAP.",
             longDescription:
-                "Pain.app is a real-time coaching app for students learning to paint. This app is my baby, designed and built on my own. The tech stack is based on top of Flutter for the mobile app, connected to a Python & FastAPI backend, with data stored in Postgres, deployed on Heroku. Because this isn't real, here's some gibberish to fill space :) Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quia officia odio nulla consectetur aperiam ad tempora magni magnam nesciunt. Fuga id sapiente facere ipsa eius exercitationem officiis deleniti, rerum dolorum. Deserunt soluta modi culpa animi.",
+                "Delve into the cosmos with the Planets Fact Site, an immersive platform utilizing HTML, CSS, JavaScript, and GSAP for enchanting animations. Each planet page invites exploration through tabs like ‘Overview,’ ‘Internal Structure,’ and ‘Surface Geology,’ offering in-depth insights. Experience a responsive design that adapts to device's screen size, ensuring an optimal and visually pleasing layout.",
         },
         {
             title: "BMI CALCULATOR WEB APP",
@@ -79,9 +79,9 @@ const Projects = () => {
             code: "https://github.com/shahroz769/BMI-Calculator",
             techs: "HTML CSS JAVASCRIPT",
             shortDescription:
-                "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+                "A web app to calculate BMI. Choose metric or imperial units, input height and weight, and instantly see BMI result with weight classification.",
             longDescription:
-                "Pain.app is a real-time coaching app for students learning to paint. This app is my baby, designed and built on my own. The tech stack is based on top of Flutter for the mobile app, connected to a Python & FastAPI backend, with data stored in Postgres, deployed on Heroku. Because this isn't real, here's some gibberish to fill space :) Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quia officia odio nulla consectetur aperiam ad tempora magni magnam nesciunt. Fuga id sapiente facere ipsa eius exercitationem officiis deleniti, rerum dolorum. Deserunt soluta modi culpa animi.",
+                "Empower health journey with the BMI Calculator, a user-friendly tool built using HTML, CSS, and JavaScript. The app has options to switch between metric or imperial units, making it accessible to users worldwide. Input height and weight, and receive an instant BMI result along with weight classification and a healthy weight range. The app ensures an optimal layout, adapting seamlessly to your device's screen size for a responsive and visually pleasing experience.",
         },
         {
             title: "PASSWORD GENERATOR WEB APP",
@@ -90,9 +90,9 @@ const Projects = () => {
             code: "https://github.com/shahroz769/random-password-generator",
             techs: "HTML CSS JAVASCRIPT",
             shortDescription:
-                "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+                "Create strong passwords with customizable options, and copy to clipboard.",
             longDescription:
-                "Pain.app is a real-time coaching app for students learning to paint. This app is my baby, designed and built on my own. The tech stack is based on top of Flutter for the mobile app, connected to a Python & FastAPI backend, with data stored in Postgres, deployed on Heroku. Because this isn't real, here's some gibberish to fill space :) Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quia officia odio nulla consectetur aperiam ad tempora magni magnam nesciunt. Fuga id sapiente facere ipsa eius exercitationem officiis deleniti, rerum dolorum. Deserunt soluta modi culpa animi.",
+                "Password Generator app, made using HTML, CSS, and JavaScript. Generate password using inclusion options such as lowercase, uppercase letters, symbols, and special characters. Copy the generated password to the clipboard for use. The app ensures an optimal layout, adapting to device's screen size for a user-friendly and responsive experience.",
         },
         {
             title: "AGE CALCULATOR WEB APP",
@@ -101,9 +101,9 @@ const Projects = () => {
             code: "https://github.com/shahroz769/age-calculator",
             techs: "HTML CSS JAVASCRIPT",
             shortDescription:
-                "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+                "Calculate age with the Age Calculator app. Input birthdate and get precise age in years, months, and days.",
             longDescription:
-                "Pain.app is a real-time coaching app for students learning to paint. This app is my baby, designed and built on my own. The tech stack is based on top of Flutter for the mobile app, connected to a Python & FastAPI backend, with data stored in Postgres, deployed on Heroku. Because this isn't real, here's some gibberish to fill space :) Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quia officia odio nulla consectetur aperiam ad tempora magni magnam nesciunt. Fuga id sapiente facere ipsa eius exercitationem officiis deleniti, rerum dolorum. Deserunt soluta modi culpa animi.",
+                "Age Calculator app, made using HTML, CSS, and JavaScript. Submit birthdate through the form, revealing your age in years, months, and days. The app has validation checks, ensuring accuracy by detecting empty fields, valid day and month ranges, future dates, and invalid date formats.",
         },
     ];
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
