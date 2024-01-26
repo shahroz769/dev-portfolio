@@ -61,6 +61,10 @@ const Project = ({
                                 <div
                                     style={{ position: "relative" }}
                                     className="project-modal-image"
+                                    onMouseEnter={() =>
+                                        mouseEnterHandler("large")
+                                    }
+                                    onMouseLeave={mouseLeaveHandler}
                                 >
                                     <img src={img} alt="Project Image" />
                                     <div
@@ -76,10 +80,6 @@ const Project = ({
                                         onClick={() => {
                                             setShowProjectModal(false);
                                         }}
-                                        onMouseEnter={() =>
-                                            mouseEnterHandler("small")
-                                        }
-                                        onMouseLeave={mouseLeaveHandler}
                                     >
                                         <img src={crossIcon} alt="Cross" />
                                     </div>
