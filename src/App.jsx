@@ -1,10 +1,22 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { CursorContext } from "@context/CursorContext";
 import { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import Home from "@pages/Home";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 function App() {
+    const lenisRef = useRef();
+    const lenis = useLenis(() => {
+    });
+    useEffect(() => {
+        function update(time) {
+            lenisRef.current?.lenis?.raf(time * 1000);
+        }
+        window.requestAnimationFrame(update);
+        return () => window.cancelAnimationFrame(update);
+    }, []);
+
     const { cursorVariants, cursorBg, isVisible } = useContext(CursorContext);
     const [systemTheme, setSystemTheme] = useState(
         window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -37,16 +49,25 @@ function App() {
             "change",
             handlePointingDeviceChange
         );
+        document.addEventListener("mousedown", handleMouseDown);
         return () => {
             mediaQuery.removeEventListener("change", handleChange);
             pointingDeviceQuery.removeEventListener(
                 "change",
                 handlePointingDeviceChange
             );
+            document.removeEventListener("mousedown", handleMouseDown);
         };
     }, []);
+
+    const handleMouseDown = (e) => {
+        if (e.button === 1) {
+            e.preventDefault();
+        }
+    };
+
     return (
-        <>
+        <ReactLenis ref={lenisRef} root autoRaf>
             <Toaster
                 toastOptions={{
                     style: {
@@ -72,7 +93,7 @@ function App() {
                     className="custom-mouse"
                 ></motion.div>
             )}
-        </>
+        </ReactLenis>
     );
 }
 

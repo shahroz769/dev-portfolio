@@ -12,6 +12,32 @@
     --error-: #ff6f5b;
 }
 
+html {
+    &.lenis {
+        height: auto;
+    }
+}
+
+.lenis {
+    &.lenis-smooth {
+        scroll-behavior: auto;
+
+        [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+    }
+
+    &.lenis-scrolling {
+        iframe {
+            pointer-events: none;
+        }
+    }
+
+    &.lenis-stopped {
+        overflow: hidden;
+    }
+}
+
 ::selection {
     background-color: var(--accent-);
     color: var(--black-30-);
