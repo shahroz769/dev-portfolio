@@ -32,11 +32,11 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
 
     const updateImageSrc = useCallback(() => {
         if (window.innerWidth > 768) {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-desktop_zn5wf8.webp";
+            return "https://res.cloudinary.com/doigzeztt/image/upload/w_445,h_720/v1705742111/image-profile-desktop_zn5wf8.webp";
         } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/v1705742111/image-profile-tablet_ltkoqr.webp";
+            return "https://res.cloudinary.com/doigzeztt/image/upload/w_322,h_600/v1705742111/image-profile-tablet_ltkoqr.webp";
         } else {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706038916/image-profile-mobile_rbg44m.jpg";
+            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp,w_322,h_500/v1706038916/image-profile-mobile_rbg44m.jpg";
         }
     }, []);
 
