@@ -7,8 +7,7 @@ import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 function App() {
     const lenisRef = useRef();
-    const lenis = useLenis(() => {
-    });
+    const lenis = useLenis(() => {});
     useEffect(() => {
         function update(time) {
             lenisRef.current?.lenis?.raf(time * 1000);
@@ -67,7 +66,7 @@ function App() {
     };
 
     return (
-        <ReactLenis ref={lenisRef} root autoRaf>
+        <>
             <Toaster
                 toastOptions={{
                     style: {
@@ -77,7 +76,9 @@ function App() {
                     position: "bottom-center",
                 }}
             />
-            <Home />
+            <ReactLenis ref={lenisRef} root autoRaf>
+                <Home />
+            </ReactLenis>
             {hasPointingDevice && (
                 <motion.div
                     style={{
@@ -93,7 +94,7 @@ function App() {
                     className="custom-mouse"
                 ></motion.div>
             )}
-        </ReactLenis>
+        </>
     );
 }
 

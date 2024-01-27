@@ -16,6 +16,7 @@ const Project = ({
     shortDescription,
     longDescription,
 }) => {
+    const [projectImageLoaded, setProjectImageLoaded] = useState(false);
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
     const [showProjectModal, setShowProjectModal] = useState(false);
     useEffect(() => {
@@ -189,11 +190,20 @@ const Project = ({
             <div className="project">
                 <div
                     onClick={() => setShowProjectModal(true)}
-                    className="project-bg"
+                    className={`project-bg ${
+                        projectImageLoaded ? "" : "loading"
+                    }`}
                 >
-                    <img src={img} alt="Project Image" loading="lazy" />
+                    <img
+                        src={img}
+                        alt="Project Image"
+                        loading="lazy"
+                        onLoad={() => {
+                            setProjectImageLoaded(true);
+                        }}
+                        className={projectImageLoaded ? "loaded" : ""}
+                    />
                 </div>
-
                 <div className="project-details">
                     <div className="project-title">
                         <Reveal>

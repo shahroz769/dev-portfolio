@@ -14,14 +14,35 @@
     overflow: hidden;
 }
 
+.loading {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
 .project-bg img {
     width: 85%;
     position: absolute;
     bottom: 0;
     left: 50%;
-    translate: -50% 8%;
+    opacity: 0;
+    translate: -50% 8.5%;
     transition: all 0.25s;
     border-radius: 0.4rem;
+}
+
+.loaded {
+    opacity: 1 !important;
 }
 
 .project-bg:hover img {
@@ -146,7 +167,7 @@
 }
 
 @media (width <=400px) {
-    .project-modal-links{
+    .project-modal-links {
         flex-direction: column;
         align-items: flex-start;
     }
