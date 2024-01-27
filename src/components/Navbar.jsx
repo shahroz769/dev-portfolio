@@ -12,6 +12,7 @@ import Reveal from "@components/Reveal";
 const Navbar = ({ profileImageBoolean, bottom }) => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
     const [src, setSrc] = useState();
+    const [profileImageLoaded, setProfileImageLoaded] = useState(false);
     const [animationState, setAnimationState] = useState("hidden");
 
     const handleImageLoad = useCallback(() => {
@@ -111,7 +112,11 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                 </Reveal>
             </div>
             {profileImageBoolean && (
-                <div className="nav-profile-image">
+                <div
+                    className={`nav-profile-image ${
+                        profileImageLoaded ? "" : "profile-loading"
+                    }`}
+                >
                     <motion.img
                         initial="hidden"
                         animate={animationState}
@@ -125,6 +130,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         alt="Profile Picture"
                         onLoad={() => {
                             handleImageLoad();
+                            setProfileImageLoaded(true);
                         }}
                     />
                 </div>

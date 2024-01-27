@@ -28,10 +28,30 @@
     z-index: -100;
 }
 
+.nav-profile-image {
+    background-color: var(--black-30-);
+}
+
 .nav-profile-image img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.profile-loading {
+    animation: profilePulse 1s infinite;
+}
+
+@keyframes profilePulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 
 @media (width<=850px) {
@@ -73,7 +93,7 @@
     }
 }
 
-.nav-profile-image{
+.nav-profile-image {
     background-size: cover;
     background-position: center;
 }
