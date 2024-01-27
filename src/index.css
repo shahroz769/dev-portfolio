@@ -48,7 +48,7 @@ a {
     pointer-events: none;
     top: 0;
     left: 0;
-    z-index: 999999;
+    z-index: 99999999;
     border-radius: 50%;
 }
 
