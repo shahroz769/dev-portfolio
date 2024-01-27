@@ -87,14 +87,13 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 9999999;
     height: 100vh;
     padding: 4.8rem 1.2rem;
     overflow-y: scroll;
     display: flex;
     justify-content: center;
     cursor: pointer;
-    background: #1d1d1d40;
 }
 
 .project-modal {

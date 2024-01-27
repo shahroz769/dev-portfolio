@@ -25,6 +25,21 @@ const Project = ({
             document.body.style.overflow = "auto";
         };
     }, [showProjectModal]);
+
+    const [hasPointingDevice, setHasPointingDevice] = useState(
+        window.matchMedia("(pointer:fine)").matches
+    );
+    useEffect(() => {
+        const pointingDeviceQuery = window.matchMedia("(pointer:fine)");
+        const handleChange = () => {
+            setHasPointingDevice(pointingDeviceQuery.matches);
+        };
+        pointingDeviceQuery.addEventListener("change", handleChange);
+        return () => {
+            pointingDeviceQuery.removeEventListener("change", handleChange);
+        };
+    }, []);
+
     return (
         <>
             <AnimatePresence>
@@ -36,12 +51,22 @@ const Project = ({
                             initial={{
                                 opacity: 0,
                                 backdropFilter: "blur(0px)",
+                                background: "transparent",
                             }}
                             animate={{
                                 opacity: 1,
-                                backdropFilter: "blur(12px)",
+                                backdropFilter: hasPointingDevice
+                                    ? "blur(12px)"
+                                    : "blur(0px)",
+                                background: hasPointingDevice
+                                    ? "rgba(29, 29, 29, 0.25)"
+                                    : "rgba(29, 29, 29, 0.75)",
                             }}
-                            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                            exit={{
+                                opacity: 0,
+                                backdropFilter: "blur(0px)",
+                                background: "transparent",
+                            }}
                             onClick={(e) => {
                                 if (
                                     e.target.classList.contains(
