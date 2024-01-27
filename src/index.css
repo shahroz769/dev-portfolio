@@ -152,33 +152,6 @@ p {
     color: var(--white-30-);
 }
 
-/* Lenis Smooth Scrolling */
-/* html {
-    &.lenis {
-        height: auto;
-    }
-}
-
-.lenis {
-    &.lenis-smooth {
-        scroll-behavior: auto;
-
-        [data-lenis-prevent] {
-            overscroll-behavior: contain;
-        }
-    }
-
-    &.lenis-scrolling {
-        iframe {
-            pointer-events: none;
-        }
-    }
-
-    &.lenis-stopped {
-        overflow: hidden;
-    }
-} */
-
 @media (hover: hover) {
     /* ----- Scrollbar Styles For Firefox ----- */
     * {
