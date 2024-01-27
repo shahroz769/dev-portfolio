@@ -51,7 +51,7 @@ const Project = ({
                             initial={{
                                 opacity: 0,
                                 backdropFilter: "blur(0px)",
-                                background: "transparent",
+                                background: "rgba(29, 29, 29, 0)",
                             }}
                             animate={{
                                 opacity: 1,
@@ -65,7 +65,7 @@ const Project = ({
                             exit={{
                                 opacity: 0,
                                 backdropFilter: "blur(0px)",
-                                background: "transparent",
+                                background: "rgba(29, 29, 29, 0)",
                             }}
                             onClick={(e) => {
                                 if (
