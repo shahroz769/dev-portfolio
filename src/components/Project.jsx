@@ -111,19 +111,30 @@ const Project = ({
                                     </div>
                                 </div>
                                 <div className="project-modal-body">
-                                    <Reveal>
-                                        <h3
+                                    <h3
+                                        onMouseEnter={() =>
+                                            mouseEnterHandler("small")
+                                        }
+                                        onMouseLeave={mouseLeaveHandler}
+                                        style={{ cursor: "default" }}
+                                    >
+                                        {title}
+                                    </h3>
+                                    <div className="project-techs modal-project-techs">
+                                        <p
                                             onMouseEnter={() =>
                                                 mouseEnterHandler("small")
                                             }
                                             onMouseLeave={mouseLeaveHandler}
-                                            style={{ cursor: "default" }}
+                                            style={{
+                                                cursor: "default",
+                                            }}
                                         >
-                                            {title}
-                                        </h3>
-                                    </Reveal>
-                                    <div className="project-techs modal-project-techs">
-                                        <Reveal>
+                                            {techs}
+                                        </p>
+                                    </div>
+                                    <div className="project-modal-description">
+                                        {
                                             <p
                                                 onMouseEnter={() =>
                                                     mouseEnterHandler("small")
@@ -133,44 +144,21 @@ const Project = ({
                                                     cursor: "default",
                                                 }}
                                             >
-                                                {techs}
+                                                {longDescription}
                                             </p>
-                                        </Reveal>
-                                    </div>
-                                    <div className="project-modal-description">
-                                        {
-                                            <Reveal>
-                                                <p
-                                                    onMouseEnter={() =>
-                                                        mouseEnterHandler(
-                                                            "small"
-                                                        )
-                                                    }
-                                                    onMouseLeave={
-                                                        mouseLeaveHandler
-                                                    }
-                                                    style={{
-                                                        cursor: "default",
-                                                    }}
-                                                >
-                                                    {longDescription}
-                                                </p>
-                                            </Reveal>
                                         }
                                     </div>
                                     <div className="modal-project-urls">
-                                        <Reveal>
-                                            <h3
-                                                className="modal-links-text"
-                                                onMouseEnter={() =>
-                                                    mouseEnterHandler("small")
-                                                }
-                                                onMouseLeave={mouseLeaveHandler}
-                                                style={{ cursor: "default" }}
-                                            >
-                                                Project Links<span>.</span>
-                                            </h3>
-                                        </Reveal>
+                                        <h3
+                                            className="modal-links-text"
+                                            onMouseEnter={() =>
+                                                mouseEnterHandler("small")
+                                            }
+                                            onMouseLeave={mouseLeaveHandler}
+                                            style={{ cursor: "default" }}
+                                        >
+                                            Project Links<span>.</span>
+                                        </h3>
                                     </div>
                                     <div className="project-modal-links">
                                         <a
@@ -182,12 +170,8 @@ const Project = ({
                                             onMouseLeave={mouseLeaveHandler}
                                             style={{ cursor: "pointer" }}
                                         >
-                                            <Reveal>
-                                                <IconGithub fill="var(--accent-)" />
-                                            </Reveal>
-                                            <Reveal>
-                                                <p>Source code</p>
-                                            </Reveal>
+                                            <IconGithub fill="var(--accent-)" />
+                                            <p>Source code</p>
                                         </a>
                                         <a
                                             href={project}
@@ -198,12 +182,8 @@ const Project = ({
                                             onMouseLeave={mouseLeaveHandler}
                                             style={{ cursor: "pointer" }}
                                         >
-                                            <Reveal>
-                                                <IconUrl fill="var(--accent-)" />
-                                            </Reveal>
-                                            <Reveal>
-                                                <p>Live project</p>
-                                            </Reveal>
+                                            <IconUrl fill="var(--accent-)" />
+                                            <p>Live project</p>
                                         </a>
                                     </div>
                                 </div>

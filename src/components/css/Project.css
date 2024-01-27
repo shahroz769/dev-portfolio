@@ -88,7 +88,7 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    height: 100vh;
+    height: 100dvh;
     padding: 4.8rem 1.2rem;
     overflow-y: scroll;
     display: flex;
