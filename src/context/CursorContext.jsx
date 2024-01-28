@@ -13,7 +13,7 @@ const CursorProvider = ({ children }) => {
             y: e.clientY,
         });
     };
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         const handleMouseEnter = () => setIsVisible(true);
