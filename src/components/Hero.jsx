@@ -5,18 +5,6 @@ import Reveal from "@components/Reveal";
 
 const Hero = () => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
-    const scrollToContact = () => {
-        const contactSection = document.getElementById("contact");
-
-        if (contactSection) {
-            const offsetTop = contactSection.offsetTop;
-
-            window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-            });
-        }
-    };
     return (
         <section>
             <div className="hero">
@@ -54,9 +42,12 @@ const Hero = () => {
                                         mouseEnterHandler("small")
                                     }
                                     onMouseLeave={mouseLeaveHandler}
-                                    type="submit"
-                                    onClick={scrollToContact}
-                                    value={"CONTACT ME"}
+                                    type="button"
+                                    onClick={() => {
+                                        window.location.href =
+                                            "https://res.cloudinary.com/doigzeztt/image/upload/v1706540736/cv/Shahroz_cv_f2tqty.pdf";
+                                    }}
+                                    value={"RESUME"}
                                 />
                             </div>
                         </Reveal>
