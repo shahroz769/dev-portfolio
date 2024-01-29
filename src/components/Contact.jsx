@@ -4,7 +4,6 @@ import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import axios from "axios";
 import toast from "react-hot-toast";
 
 const Contact = () => {
@@ -37,18 +36,31 @@ const Contact = () => {
         },
     });
     const sendMessage = () => {
-        const messagePromise = axios
-            .post("https://devv-invoice-cmui.onrender.com/portfolio/message", {
-                ...values,
-                portfolio: "shahrozahmed",
-            })
+        const messagePromise = fetch(
+            "https://devv-invoice-cmui.onrender.com/portfolio/message",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    ...values,
+                    portfolio: "shahrozahmed",
+                }),
+            }
+        )
             .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Failed! Try Again.");
+                }
                 resetForm();
+                return response.json();
             })
             .catch((error) => {
-                console.log(error);
-                Promise.reject();
+                console.error(error);
+                return Promise.reject(error);
             });
+
         toast.promise(messagePromise, {
             success: "Message sent!",
             loading: "Sending...",
