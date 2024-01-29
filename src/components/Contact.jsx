@@ -1,5 +1,5 @@
 import "@components/css/Contact.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 import { useFormik } from "formik";

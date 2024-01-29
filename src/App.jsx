@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CursorContext } from "@context/CursorContext";
 import { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
