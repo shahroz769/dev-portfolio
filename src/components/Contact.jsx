@@ -31,7 +31,6 @@ const Contact = () => {
         },
         validationSchema: contactSchema,
         onSubmit: (values, actions) => {
-            console.log(values);
             sendMessage(values);
         },
     });

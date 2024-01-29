@@ -47,7 +47,7 @@ const Hero = () => {
                                         window.location.href =
                                             "https://res.cloudinary.com/doigzeztt/image/upload/v1706540736/cv/Shahroz_cv_f2tqty.pdf";
                                     }}
-                                    value={"RESUME"}
+                                    value={"DOWNLOAD CV"}
                                 />
                             </div>
                         </Reveal>
