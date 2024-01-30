@@ -95,7 +95,7 @@ const Project = ({
                                             position: "absolute",
                                             top: "12px",
                                             right: "12px",
-                                            backgroundColor: "#0aff9d",
+                                            backgroundColor: "var(--accent-)",
                                             borderRadius: "50%",
                                             cursor: "pointer",
                                         }}

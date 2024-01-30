@@ -32,14 +32,14 @@ const CursorProvider = ({ children }) => {
         default: {
             x: cursorPosition.x - 16,
             y: cursorPosition.y - 16,
-            backgroundColor: "#0aff9d",
+            backgroundColor: "var(--accent-)",
         },
         textLarge: {
             width: "150px",
             height: "150px",
             x: cursorPosition.x - 72,
             y: cursorPosition.y - 72,
-            backgroundColor: "#fff",
+            backgroundColor: "#ffffff",
             mixBlendMode: "difference",
         },
         textMedium: {
@@ -47,7 +47,7 @@ const CursorProvider = ({ children }) => {
             height: "75px",
             x: cursorPosition.x - 36,
             y: cursorPosition.y - 36,
-            backgroundColor: "#fff",
+            backgroundColor: "#ffffff",
             mixBlendMode: "difference",
         },
         textSmall: {
@@ -55,7 +55,7 @@ const CursorProvider = ({ children }) => {
             height: "50px",
             x: cursorPosition.x - 24,
             y: cursorPosition.y - 24,
-            backgroundColor: "#fff",
+            backgroundColor: "#ffffff",
             mixBlendMode: "difference",
         },
     };

@@ -61,7 +61,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "default" }}
                     >
-                        shahrozahmed
+                        shahroz<span style={{color: "var(--accent-)"}}>ahmed</span>
                     </h3>
                 </Reveal>
             </div>

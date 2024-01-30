@@ -17,7 +17,7 @@ const Hero = () => {
                         >
                             Nice to meet you! I’m{" "}
                             <span className="name">Shahroz</span>
-                            <span style={{ color: "#0aff9d" }}>.</span>
+                            <span style={{ color: "var(--accent-)" }}>.</span>
                         </h1>
                     </Reveal>
                 </div>

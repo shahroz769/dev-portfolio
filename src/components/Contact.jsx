@@ -76,7 +76,7 @@ const Contact = () => {
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "default" }}
                     >
-                        Contact<span style={{ color: "#0aff9d" }}>.</span>
+                        Contact<span style={{ color: "var(--accent-)" }}>.</span>
                     </h1>
                 </Reveal>
                 <Reveal>

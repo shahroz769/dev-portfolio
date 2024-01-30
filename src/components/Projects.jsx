@@ -116,7 +116,7 @@ const Projects = () => {
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "default" }}
                     >
-                        Projects<span style={{ color: "#0aff9d" }}>.</span>
+                        Projects<span style={{ color: "var(--accent-)" }}>.</span>
                     </h1>
                 </Reveal>
             </div>
