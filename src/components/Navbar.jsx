@@ -33,11 +33,11 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
     const updateImageSrc = useCallback((format) => {
         const imageFormat = format || "avif";
         if (window.innerWidth > 768) {
-            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_445,h_720,e_grayscale/v1705742111/image-profile-desktop_zn5wf8.webp`;
+            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_445,h_720,e_saturation:-10/v1705742111/image-profile-desktop_zn5wf8.webp`;
         } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
-            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_322,h_600,e_grayscale/v1705742111/image-profile-tablet_ltkoqr.webp`;
+            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_322,h_600,e_saturation:-10/v1705742111/image-profile-tablet_ltkoqr.webp`;
         } else {
-            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},e_grayscale/v1706038916/image-profile-mobile_rbg44m.jpg`;
+            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},e_saturation:-10/v1706038916/image-profile-mobile_rbg44m.jpg`;
         }
     }, []);
 
