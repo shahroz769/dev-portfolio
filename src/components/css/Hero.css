@@ -38,13 +38,13 @@
 @media (width<=1223px) {
     .hero-title h1 {
         font-size: 5rem;
-        line-height: 5rem;
+        line-height: 5.7rem;
     }
 }
 @media (width<=1106px) {
     .hero-title h1 {
         font-size: 4.5rem;
-        line-height: 4.5rem;
+        line-height: 5.1rem;
     }
 }
 @media (width<=800px) {

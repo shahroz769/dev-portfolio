@@ -98,7 +98,7 @@ img {
 main {
     display: flex;
     flex-direction: column;
-    max-width: 1110px;
+    max-width: 1200px;
     width: 90%;
 }
 
@@ -113,7 +113,7 @@ footer {
 }
 
 footer > div {
-    max-width: 1110px;
+    max-width: 1200px;
     width: 90%;
 }
 
@@ -129,7 +129,7 @@ a {
 
 h1 {
     font-size: 5.5rem;
-    line-height: 5.5rem;
+    line-height: 6.3rem;
     letter-spacing: -0.15625rem;
     font-weight: 700;
     color: var(--white-60-);

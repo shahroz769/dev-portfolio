@@ -73,7 +73,7 @@ form {
     visibility: hidden;
 }
 
-@media (width <=768px) {
+@media (width <=786px) {
     .contact {
         flex-direction: column;
         justify-content: center;
