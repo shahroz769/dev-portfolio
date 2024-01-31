@@ -21,12 +21,12 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
 
     const imageVariants = {
         hidden: {
-            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
             y: -100,
+            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
         },
         visible: {
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             y: 0,
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         },
     };
 

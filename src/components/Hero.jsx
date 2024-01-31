@@ -33,25 +33,21 @@ const Hero = () => {
                             users love.
                         </p>
                     </Reveal>
-                    <div>
-                        <Reveal>
-                            <div className="btn">
-                                <input
-                                    className="submit-btn"
-                                    onMouseEnter={() =>
-                                        mouseEnterHandler("small")
-                                    }
-                                    onMouseLeave={mouseLeaveHandler}
-                                    type="button"
-                                    onClick={() => {
-                                        window.location.href =
-                                            "https://res.cloudinary.com/doigzeztt/image/upload/v1706540736/cv/Shahroz_cv_f2tqty.pdf";
-                                    }}
-                                    value={"DOWNLOAD CV"}
-                                />
-                            </div>
-                        </Reveal>
-                    </div>
+                    <Reveal widthCV="100%" justifyContentCV="center">
+                        <div className="btn">
+                            <input
+                                className="submit-btn"
+                                onMouseEnter={() => mouseEnterHandler("small")}
+                                onMouseLeave={mouseLeaveHandler}
+                                type="button"
+                                onClick={() => {
+                                    window.location.href =
+                                        "https://res.cloudinary.com/doigzeztt/image/upload/v1706540736/cv/Shahroz_cv_f2tqty.pdf";
+                                }}
+                                value={"DOWNLOAD CV"}
+                            />
+                        </div>
+                    </Reveal>
                 </div>
             </div>
         </section>

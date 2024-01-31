@@ -115,7 +115,7 @@ const Projects = () => {
     return (
         <div className="projects-container">
             <div className="header">
-                <Reveal>
+                <Reveal widthProject="100%">
                     <h1
                         onMouseEnter={() => mouseEnterHandler("large")}
                         onMouseLeave={mouseLeaveHandler}

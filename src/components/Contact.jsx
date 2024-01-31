@@ -70,13 +70,14 @@ const Contact = () => {
     return (
         <div className="contact" id="contact">
             <div className="contact-body">
-                <Reveal>
+                <Reveal widthContact="100%" justifyContentContact="center">
                     <h1
                         onMouseEnter={() => mouseEnterHandler("large")}
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "default" }}
                     >
-                        Contact<span style={{ color: "var(--accent-)" }}>.</span>
+                        Contact
+                        <span style={{ color: "var(--accent-)" }}>.</span>
                     </h1>
                 </Reveal>
                 <Reveal>
@@ -179,7 +180,7 @@ const Contact = () => {
                         </p>
                     }
                 </Reveal>
-                <Reveal>
+                <Reveal width="100%" justifyContent="flex-end">
                     <div className="btn">
                         <input
                             className="submit-btn"
