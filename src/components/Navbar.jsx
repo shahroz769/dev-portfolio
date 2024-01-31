@@ -30,13 +30,14 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
         },
     };
 
-    const updateImageSrc = useCallback(() => {
+    const updateImageSrc = useCallback((format) => {
+        const imageFormat = format || "avif";
         if (window.innerWidth > 768) {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/w_445,h_720/v1705742111/image-profile-desktop_zn5wf8.webp";
+            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_445,h_720,e_grayscale/v1705742111/image-profile-desktop_zn5wf8.webp`;
         } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/w_322,h_600/v1705742111/image-profile-tablet_ltkoqr.webp";
+            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_322,h_600,e_grayscale/v1705742111/image-profile-tablet_ltkoqr.webp`;
         } else {
-            return "https://res.cloudinary.com/doigzeztt/image/upload/f_webp/v1706038916/image-profile-mobile_rbg44m.jpg";
+            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},e_grayscale/v1706038916/image-profile-mobile_rbg44m.jpg`;
         }
     }, []);
 
@@ -61,7 +62,8 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "default" }}
                     >
-                        shahroz<span style={{color: "var(--accent-)"}}>ahmed</span>
+                        shahroz
+                        <span style={{ color: "var(--accent-)" }}>ahmed</span>
                     </h3>
                 </Reveal>
             </div>
@@ -131,6 +133,10 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onLoad={() => {
                             handleImageLoad();
                             setProfileImageLoaded(true);
+                        }}
+                        onError={() => {
+                            setProfileImageLoaded(true);
+                            setSrc(updateImageSrc("webp"));
                         }}
                     />
                 </div>

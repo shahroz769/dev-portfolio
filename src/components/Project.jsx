@@ -15,6 +15,7 @@ const Project = ({
     project,
     shortDescription,
     longDescription,
+    imageErrorHandler,
 }) => {
     const [projectImageLoaded, setProjectImageLoaded] = useState(false);
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -106,6 +107,9 @@ const Project = ({
                                             mouseEnterHandler("small")
                                         }
                                         onMouseLeave={mouseLeaveHandler}
+                                        onError={() => {
+                                            imageErrorHandler();
+                                        }}
                                     >
                                         <img src={crossIcon} alt="Cross" />
                                     </div>
@@ -204,6 +208,10 @@ const Project = ({
                         alt="Project Image"
                         loading="lazy"
                         onLoad={() => {
+                            setProjectImageLoaded(true);
+                        }}
+                        onError={() => {
+                            imageErrorHandler();
                             setProjectImageLoaded(true);
                         }}
                         className={projectImageLoaded ? "loaded" : ""}
