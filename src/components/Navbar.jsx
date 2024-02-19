@@ -140,9 +140,14 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                             setSrc(updateImageSrc("webp"));
                         }}
                     />
-                    <div className="circle1">
+                    <motion.div
+                        className="circle1"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeIn" }}
+                    >
                         <img src={circleImage} alt="Circle" />
-                    </div>
+                    </motion.div>
                 </div>
             )}
         </header>

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 import springImage from "@assets/spring.svg";
+import { motion } from "framer-motion";
 
 const Hero = () => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -51,9 +52,14 @@ const Hero = () => {
                     </Reveal>
                 </div>
             </div>
-            <div className="spring1">
+            <motion.div
+                className="spring1"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeIn" }}
+            >
                 <img src={springImage} alt="Spring" />
-            </div>
+            </motion.div>
         </section>
     );
 };
