@@ -35,13 +35,6 @@
     gap: 3.5rem;
 }
 
-.spring1 {
-    position: absolute;
-    top: 142px;
-    left: -100px;
-    z-index: -10;
-}
-
 @media (width<=1223px) {
     .hero-title h1 {
         font-size: 5rem;
@@ -67,11 +60,6 @@
     .hero-body {
         gap: 1.5rem;
     }
-    .spring1 {
-        position: absolute;
-        top: 105px;
-        left: -35%;
-    }
 }
 @media (width<=600px) {
     .hero {
@@ -86,18 +74,5 @@
     }
     .hero-body {
         width: 100%;
-    }
-    .spring1 {
-        position: absolute;
-        top: 60px;
-        left: -60%;
-    }
-}
-
-@media (width<=400px) {
-    .spring1 {
-        position: absolute;
-        top: 60px;
-        left: -90%;
     }
 }
