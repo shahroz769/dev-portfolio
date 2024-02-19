@@ -2,6 +2,7 @@ import "@components/css/Hero.css";
 import { useContext } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
+import springImage from "@assets/spring.svg";
 
 const Hero = () => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -49,6 +50,9 @@ const Hero = () => {
                         </div>
                     </Reveal>
                 </div>
+            </div>
+            <div className="spring1">
+                <img src={springImage} alt="Spring" />
             </div>
         </section>
     );

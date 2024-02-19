@@ -42,6 +42,18 @@
     animation: profilePulse 1s infinite;
 }
 
+.nav-profile-image {
+    background-size: cover;
+    background-position: center;
+}
+
+.circle1 {
+    position: absolute;
+    width: 128px;
+    bottom: 70px;
+    left: -64px;
+}
+
 @keyframes profilePulse {
     0% {
         opacity: 0.5;
@@ -69,6 +81,14 @@
         max-width: 322px;
         height: 600px;
     }
+    .circle1 {
+        bottom: 0px;
+        left: initial;
+        right: -64px;
+    }
+    .nav-profile-image {
+        overflow: hidden;
+    }
 }
 
 @media (width<=630px) {
@@ -91,9 +111,7 @@
         transform: translateX(-50%);
         height: 500px;
     }
-}
-
-.nav-profile-image {
-    background-size: cover;
-    background-position: center;
+    .circle1 {
+        display: none;
+    }
 }

@@ -101,7 +101,7 @@ const Contact = () => {
                                 borderBottom: "1px solid var(--error-)",
                             }
                         }
-                        autocomplete="false"
+                        autoComplete="false"
                         value={values.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -131,7 +131,7 @@ const Contact = () => {
                                 borderBottom: "1px solid var(--error-)",
                             }
                         }
-                        autocomplete="false"
+                        autoComplete="false"
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -161,7 +161,7 @@ const Contact = () => {
                                 borderBottom: "1px solid var(--error-)",
                             }
                         }
-                        autocomplete="false"
+                        autoComplete="false"
                         value={values.message}
                         onChange={handleChange}
                         onBlur={handleBlur}

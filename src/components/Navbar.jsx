@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useContext, useCallback } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
+import circleImage from "@assets/circle.svg";
 
 const Navbar = ({ profileImageBoolean, bottom }) => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -139,6 +140,9 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                             setSrc(updateImageSrc("webp"));
                         }}
                     />
+                    <div className="circle1">
+                        <img src={circleImage} alt="Circle" />
+                    </div>
                 </div>
             )}
         </header>
