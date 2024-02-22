@@ -88,11 +88,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "pointer", display: "flex" }}
                     >
-                        <img
-                            style={{ width: "24px" }}
-                            src={linkedInIcon}
-                            alt="linkedIn"
-                        />
+                        <img src={linkedInIcon} alt="linkedIn" />
                     </a>
                 </Reveal>
                 <Reveal>
@@ -103,11 +99,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "pointer", display: "flex" }}
                     >
-                        <img
-                            style={{ width: "24px" }}
-                            src={whatsappIcon}
-                            alt="twitter"
-                        />
+                        <img src={whatsappIcon} alt="twitter" />
                     </a>
                 </Reveal>
                 <Reveal>
@@ -118,11 +110,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "pointer", display: "flex" }}
                     >
-                        <img
-                            style={{ width: "24px" }}
-                            src={twitterIcon}
-                            alt="twitter"
-                        />
+                        <img src={twitterIcon} alt="twitter" />
                     </a>
                 </Reveal>
             </div>
