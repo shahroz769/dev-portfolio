@@ -27,20 +27,6 @@ const Project = ({
         };
     }, [showProjectModal]);
 
-    const [hasPointingDevice, setHasPointingDevice] = useState(
-        window.matchMedia("(pointer:fine)").matches
-    );
-    useEffect(() => {
-        const pointingDeviceQuery = window.matchMedia("(pointer:fine)");
-        const handleChange = () => {
-            setHasPointingDevice(pointingDeviceQuery.matches);
-        };
-        pointingDeviceQuery.addEventListener("change", handleChange);
-        return () => {
-            pointingDeviceQuery.removeEventListener("change", handleChange);
-        };
-    }, []);
-
     return (
         <>
             <AnimatePresence>
@@ -51,21 +37,14 @@ const Project = ({
                             className="project-modal-container"
                             initial={{
                                 opacity: 0,
-                                backdropFilter: "blur(0px)",
                                 background: "rgba(29, 29, 29, 0)",
                             }}
                             animate={{
                                 opacity: 1,
-                                backdropFilter: hasPointingDevice
-                                    ? "blur(12px)"
-                                    : "blur(0px)",
-                                background: hasPointingDevice
-                                    ? "rgba(29, 29, 29, 0.25)"
-                                    : "rgba(29, 29, 29, 0.75)",
+                                background: "rgba(29, 29, 29, 0.9)",
                             }}
                             exit={{
                                 opacity: 0,
-                                backdropFilter: "blur(0px)",
                                 background: "rgba(29, 29, 29, 0)",
                             }}
                             onClick={(e) => {
