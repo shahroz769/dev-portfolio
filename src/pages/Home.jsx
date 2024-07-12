@@ -2,7 +2,7 @@ import Hero from "@components/Hero";
 import Navbar from "@components/Navbar";
 import Skills from "@components/Skills";
 import Projects from "@components/Projects";
-// import Contact from "@components/Contact";
+import Contact from "@components/Contact";
 
 const Home = () => {
     return (
@@ -15,7 +15,7 @@ const Home = () => {
             </main>
             <footer>
                 <div>
-                    {/* <Contact /> */}
+                    <Contact />
                     <div className="nav-bottom">
                         <Navbar bottom="2.5rem" />
                     </div>
