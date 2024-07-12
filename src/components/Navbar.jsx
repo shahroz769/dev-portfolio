@@ -3,9 +3,8 @@ import IconGithub from "@assets/jsx/github";
 import linkedInIcon from "@assets/LinkedIn.svg";
 import twitterIcon from "@assets/twitter.svg";
 import whatsappIcon from "@assets/whatsapp.svg";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { useContext, useCallback } from "react";
+import { useEffect, useState, useContext, useCallback } from "react";
+import { LazyMotion, m, domAnimation } from "framer-motion";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 import circleImage from "@assets/circle.svg";
@@ -50,6 +49,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, [updateImageSrc]);
+
     return (
         <header
             className="nav-header"
@@ -120,34 +120,36 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         profileImageLoaded ? "" : "profile-loading"
                     }`}
                 >
-                    <motion.img
-                        initial="hidden"
-                        animate={animationState}
-                        variants={imageVariants}
-                        transition={{
-                            ease: [0.83, 0, 0.17, 1],
-                            duration: 1.5,
-                        }}
-                        fetchpriority="high"
-                        src={src}
-                        alt="Profile Picture"
-                        onLoad={() => {
-                            handleImageLoad();
-                            setProfileImageLoaded(true);
-                        }}
-                        onError={() => {
-                            setProfileImageLoaded(true);
-                            setSrc(updateImageSrc("webp"));
-                        }}
-                    />
-                    <motion.div
-                        className="circle1"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, ease: "easeIn" }}
-                    >
-                        <img src={circleImage} alt="Circle" />
-                    </motion.div>
+                    <LazyMotion features={domAnimation}>
+                        <m.img
+                            initial="hidden"
+                            animate={animationState}
+                            variants={imageVariants}
+                            transition={{
+                                ease: [0.83, 0, 0.17, 1],
+                                duration: 1.5,
+                            }}
+                            fetchpriority="high"
+                            src={src}
+                            alt="Profile Picture"
+                            onLoad={() => {
+                                handleImageLoad();
+                                setProfileImageLoaded(true);
+                            }}
+                            onError={() => {
+                                setProfileImageLoaded(true);
+                                setSrc(updateImageSrc("webp"));
+                            }}
+                        />
+                        <m.div
+                            className="circle1"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, ease: "easeIn" }}
+                        >
+                            <img src={circleImage} alt="Circle" />
+                        </m.div>
+                    </LazyMotion>
                 </div>
             )}
         </header>

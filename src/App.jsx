@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CursorContext } from "@context/CursorContext";
 import { Toaster } from "react-hot-toast";
-import { motion } from "framer-motion";
+import { m, LazyMotion, domAnimation } from "framer-motion";
 import Home from "@pages/Home";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
     const [hasPointingDevice, setHasPointingDevice] = useState(
         window.matchMedia("(pointer:fine)").matches
     );
+
     useEffect(() => {
         const favicon = document.getElementById("favicon");
         if (favicon) {
@@ -23,12 +24,14 @@ function App() {
                     : "https://res.cloudinary.com/dke5jqhus/image/upload/f_webp/v1705847763/Portfolio/skiowwakseerwteqvulo.svg";
         }
     }, [systemTheme]);
+
     useEffect(() => {
         const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
         const handleChange = () => {
             setSystemTheme(mediaQuery.matches ? "dark" : "light");
         };
         mediaQuery.addEventListener("change", handleChange);
+
         const pointingDeviceQuery = window.matchMedia("(pointer:fine)");
         const handlePointingDeviceChange = () => {
             setHasPointingDevice(pointingDeviceQuery.matches);
@@ -37,6 +40,7 @@ function App() {
             "change",
             handlePointingDeviceChange
         );
+
         return () => {
             mediaQuery.removeEventListener("change", handleChange);
             pointingDeviceQuery.removeEventListener(
@@ -59,19 +63,21 @@ function App() {
             />
             <Home />
             {hasPointingDevice && (
-                <motion.div
-                    style={{
-                        visibility: isVisible ? "visible" : "hidden",
-                    }}
-                    variants={cursorVariants}
-                    animate={cursorBg}
-                    transition={{
-                        type: "tween",
-                        ease: "backOut",
-                        duration: 0.3,
-                    }}
-                    className="custom-mouse"
-                ></motion.div>
+                <LazyMotion features={domAnimation}>
+                    <m.div
+                        style={{
+                            visibility: isVisible ? "visible" : "hidden",
+                        }}
+                        variants={cursorVariants}
+                        animate={cursorBg}
+                        transition={{
+                            type: "tween",
+                            ease: "backOut",
+                            duration: 0.3,
+                        }}
+                        className="custom-mouse"
+                    ></m.div>
+                </LazyMotion>
             )}
         </>
     );

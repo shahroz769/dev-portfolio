@@ -3,7 +3,7 @@ import IconGithub from "@assets/jsx/github";
 import IconUrl from "@assets/jsx/url";
 import { useContext, useEffect, useState } from "react";
 import { CursorContext } from "@context/CursorContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { LazyMotion, domAnimation, m, AnimatePresence } from "framer-motion";
 import Reveal from "@components/Reveal";
 import crossIcon from "@assets/cross.svg";
 
@@ -32,92 +32,93 @@ const Project = ({
             <AnimatePresence>
                 {showProjectModal && (
                     <>
-                        <motion.div
-                            key={"project-modal-container"}
-                            className="project-modal-container"
-                            initial={{
-                                opacity: 0,
-                                background: "rgba(29, 29, 29, 0)",
-                            }}
-                            animate={{
-                                opacity: 1,
-                                background: "rgba(29, 29, 29, 0.9)",
-                            }}
-                            exit={{
-                                opacity: 0,
-                                background: "rgba(29, 29, 29, 0)",
-                            }}
-                            onClick={(e) => {
-                                if (
-                                    e.target.classList.contains(
-                                        "project-modal-container"
-                                    )
-                                ) {
-                                    setShowProjectModal(false);
-                                }
-                            }}
-                        >
-                            <motion.div
-                                className="project-modal"
-                                key={"project-modal"}
-                                initial={{ opacity: 0, y: 50 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 50 }}
+                        <LazyMotion features={domAnimation}>
+                            <m.div
+                                key={"project-modal-container"}
+                                className="project-modal-container"
+                                initial={{
+                                    opacity: 0,
+                                    background: "rgba(29, 29, 29, 0)",
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    background: "rgba(29, 29, 29, 0.9)",
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    background: "rgba(29, 29, 29, 0)",
+                                }}
+                                onClick={(e) => {
+                                    if (
+                                        e.target.classList.contains(
+                                            "project-modal-container"
+                                        )
+                                    ) {
+                                        setShowProjectModal(false);
+                                    }
+                                }}
                             >
-                                <div
-                                    style={{ position: "relative" }}
-                                    className="project-modal-image"
+                                <m.div
+                                    className="project-modal"
+                                    key={"project-modal"}
+                                    initial={{ opacity: 0, y: 50 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 50 }}
                                 >
-                                    <img src={img} alt="Project Image" />
                                     <div
-                                        style={{
-                                            width: "1.6rem",
-                                            position: "absolute",
-                                            top: "12px",
-                                            right: "12px",
-                                            backgroundColor: "var(--accent-)",
-                                            borderRadius: "50%",
-                                            cursor: "pointer",
-                                        }}
-                                        onClick={() => {
-                                            setShowProjectModal(false);
-                                        }}
-                                        onMouseEnter={() =>
-                                            mouseEnterHandler("small")
-                                        }
-                                        onMouseLeave={mouseLeaveHandler}
-                                        onError={() => {
-                                            imageErrorHandler();
-                                        }}
+                                        style={{ position: "relative" }}
+                                        className="project-modal-image"
                                     >
-                                        <img src={crossIcon} alt="Cross" />
-                                    </div>
-                                </div>
-                                <div className="project-modal-body">
-                                    <h3
-                                        onMouseEnter={() =>
-                                            mouseEnterHandler("small")
-                                        }
-                                        onMouseLeave={mouseLeaveHandler}
-                                        style={{ cursor: "default" }}
-                                    >
-                                        {title}
-                                    </h3>
-                                    <div className="project-techs modal-project-techs">
-                                        <p
+                                        <img src={img} alt="Project Image" />
+                                        <div
+                                            style={{
+                                                width: "1.6rem",
+                                                position: "absolute",
+                                                top: "12px",
+                                                right: "12px",
+                                                backgroundColor:
+                                                    "var(--accent-)",
+                                                borderRadius: "50%",
+                                                cursor: "pointer",
+                                            }}
+                                            onClick={() => {
+                                                setShowProjectModal(false);
+                                            }}
                                             onMouseEnter={() =>
                                                 mouseEnterHandler("small")
                                             }
                                             onMouseLeave={mouseLeaveHandler}
-                                            style={{
-                                                cursor: "default",
+                                            onError={() => {
+                                                imageErrorHandler();
                                             }}
                                         >
-                                            {techs}
-                                        </p>
+                                            <img src={crossIcon} alt="Cross" />
+                                        </div>
                                     </div>
-                                    <div className="project-modal-description">
-                                        {
+                                    <div className="project-modal-body">
+                                        <h3
+                                            onMouseEnter={() =>
+                                                mouseEnterHandler("small")
+                                            }
+                                            onMouseLeave={mouseLeaveHandler}
+                                            style={{ cursor: "default" }}
+                                        >
+                                            {title}
+                                        </h3>
+                                        <div className="project-techs modal-project-techs">
+                                            <p
+                                                onMouseEnter={() =>
+                                                    mouseEnterHandler("small")
+                                                }
+                                                onMouseLeave={mouseLeaveHandler}
+                                                style={{
+                                                    cursor: "default",
+                                                }}
+                                            >
+                                                {techs}
+                                            </p>
+                                        </div>
+                                        <div className="project-modal-description">
                                             <p
                                                 onMouseEnter={() =>
                                                     mouseEnterHandler("small")
@@ -129,49 +130,49 @@ const Project = ({
                                             >
                                                 {longDescription}
                                             </p>
-                                        }
+                                        </div>
+                                        <div className="modal-project-urls">
+                                            <h3
+                                                className="modal-links-text"
+                                                onMouseEnter={() =>
+                                                    mouseEnterHandler("small")
+                                                }
+                                                onMouseLeave={mouseLeaveHandler}
+                                                style={{ cursor: "default" }}
+                                            >
+                                                Project Links<span>.</span>
+                                            </h3>
+                                        </div>
+                                        <div className="project-modal-links">
+                                            <a
+                                                href={code}
+                                                target="_blank"
+                                                onMouseEnter={() =>
+                                                    mouseEnterHandler("small")
+                                                }
+                                                onMouseLeave={mouseLeaveHandler}
+                                                style={{ cursor: "pointer" }}
+                                            >
+                                                <IconGithub fill="var(--accent-)" />
+                                                <p>Source code</p>
+                                            </a>
+                                            <a
+                                                href={project}
+                                                target="_blank"
+                                                onMouseEnter={() =>
+                                                    mouseEnterHandler("small")
+                                                }
+                                                onMouseLeave={mouseLeaveHandler}
+                                                style={{ cursor: "pointer" }}
+                                            >
+                                                <IconUrl fill="var(--accent-)" />
+                                                <p>Live project</p>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div className="modal-project-urls">
-                                        <h3
-                                            className="modal-links-text"
-                                            onMouseEnter={() =>
-                                                mouseEnterHandler("small")
-                                            }
-                                            onMouseLeave={mouseLeaveHandler}
-                                            style={{ cursor: "default" }}
-                                        >
-                                            Project Links<span>.</span>
-                                        </h3>
-                                    </div>
-                                    <div className="project-modal-links">
-                                        <a
-                                            href={code}
-                                            target="_blank"
-                                            onMouseEnter={() =>
-                                                mouseEnterHandler("small")
-                                            }
-                                            onMouseLeave={mouseLeaveHandler}
-                                            style={{ cursor: "pointer" }}
-                                        >
-                                            <IconGithub fill="var(--accent-)" />
-                                            <p>Source code</p>
-                                        </a>
-                                        <a
-                                            href={project}
-                                            target="_blank"
-                                            onMouseEnter={() =>
-                                                mouseEnterHandler("small")
-                                            }
-                                            onMouseLeave={mouseLeaveHandler}
-                                            style={{ cursor: "pointer" }}
-                                        >
-                                            <IconUrl fill="var(--accent-)" />
-                                            <p>Live project</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </motion.div>
+                                </m.div>
+                            </m.div>
+                        </LazyMotion>
                     </>
                 )}
             </AnimatePresence>
