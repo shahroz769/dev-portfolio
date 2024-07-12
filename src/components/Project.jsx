@@ -200,15 +200,17 @@ const Project = ({
                 <div className="project-details">
                     <div className="project-title">
                         <Reveal>
-                            <h3
+                            <h2
                                 onMouseEnter={() => mouseEnterHandler("small")}
                                 onMouseLeave={mouseLeaveHandler}
                                 style={{
                                     cursor: "default",
+                                    fontSize: "1.5rem",
+                                    lineHeight: "2rem",
                                 }}
                             >
                                 {title}
-                            </h3>
+                            </h2>
                         </Reveal>
                         <div className="project-title-hl"></div>
                         <div className="project-title-urls">
