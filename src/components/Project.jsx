@@ -15,11 +15,11 @@ const Project = ({
     project,
     shortDescription,
     longDescription,
-    imageErrorHandler,
 }) => {
     const [projectImageLoaded, setProjectImageLoaded] = useState(false);
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
     const [showProjectModal, setShowProjectModal] = useState(false);
+
     useEffect(() => {
         document.body.style.overflow = showProjectModal ? "hidden" : "auto";
         return () => {
@@ -88,9 +88,6 @@ const Project = ({
                                                 mouseEnterHandler("small")
                                             }
                                             onMouseLeave={mouseLeaveHandler}
-                                            onError={() => {
-                                                imageErrorHandler();
-                                            }}
                                         >
                                             <img src={crossIcon} alt="Cross" />
                                         </div>
@@ -152,8 +149,15 @@ const Project = ({
                                                 }
                                                 onMouseLeave={mouseLeaveHandler}
                                                 style={{ cursor: "pointer" }}
+                                                aria-label="Source Code"
                                             >
-                                                <IconGithub fill="var(--accent-)" />
+                                                <IconGithub
+                                                    fill="var(--accent-)"
+                                                    aria-hidden="true"
+                                                />
+                                                <span className="sr-only">
+                                                    Source Code
+                                                </span>
                                                 <p>Source code</p>
                                             </a>
                                             <a
@@ -164,8 +168,15 @@ const Project = ({
                                                 }
                                                 onMouseLeave={mouseLeaveHandler}
                                                 style={{ cursor: "pointer" }}
+                                                aria-label="Live Project"
                                             >
-                                                <IconUrl fill="var(--accent-)" />
+                                                <IconUrl
+                                                    fill="var(--accent-)"
+                                                    aria-hidden="true"
+                                                />
+                                                <span className="sr-only">
+                                                    Live Project
+                                                </span>
                                                 <p>Live project</p>
                                             </a>
                                         </div>
@@ -191,7 +202,6 @@ const Project = ({
                             setProjectImageLoaded(true);
                         }}
                         onError={() => {
-                            imageErrorHandler();
                             setProjectImageLoaded(true);
                         }}
                         className={projectImageLoaded ? "loaded" : ""}
@@ -220,9 +230,11 @@ const Project = ({
                                 onMouseEnter={() => mouseEnterHandler("small")}
                                 onMouseLeave={mouseLeaveHandler}
                                 style={{ cursor: "pointer" }}
+                                aria-label="Source Code"
                             >
                                 <Reveal>
-                                    <IconGithub />
+                                    <IconGithub aria-hidden="true" />
+                                    <span className="sr-only">Source Code</span>
                                 </Reveal>
                             </a>
                             <a
@@ -231,9 +243,13 @@ const Project = ({
                                 onMouseEnter={() => mouseEnterHandler("small")}
                                 onMouseLeave={mouseLeaveHandler}
                                 style={{ cursor: "pointer" }}
+                                aria-label="Live Project"
                             >
                                 <Reveal>
-                                    <IconUrl />
+                                    <IconUrl aria-hidden="true" />
+                                    <span className="sr-only">
+                                        Live Project
+                                    </span>
                                 </Reveal>
                             </a>
                         </div>

@@ -1,19 +1,14 @@
 import Project from "@components/Project";
 import "@components/css/Projects.css";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 
 const Projects = () => {
-    const [imageFormat, setImageformat] = useState("avif");
-    const imageFormatErrorHandler = () => {
-        setImageformat("webp");
-    };
-
     const projects = [
         {
             title: "LINKS SHARING WEB APP",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/links_dqmjdk.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/links_dqmjdk.jpg`,
             project: "https://devslinks.vercel.app",
             code: "https://github.com/shahroz769/link-sharing-app",
             techs: "REACT NODE EXPRESS FRAMER-MOTION",
@@ -24,7 +19,7 @@ const Projects = () => {
         },
         {
             title: "INVOICE WEB APP",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/invoice_eevvd4.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/invoice_eevvd4.jpg`,
             project: "https://devv-invoice.vercel.app",
             code: "https://github.com/shahroz769/invoice-app",
             techs: "REACT NODE EXPRESS FRAMER-MOTION",
@@ -35,7 +30,7 @@ const Projects = () => {
         },
         {
             title: "TIC TAC TOE GAME",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946705/Portfolio%20Projects/tic_tac_toe_vgtt6o.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946705/Portfolio%20Projects/tic_tac_toe_vgtt6o.jpg`,
             project: "https://devs-tictactoe.vercel.app",
             code: "https://github.com/shahroz769/tic-tac-toe",
             techs: "HTML CSS JAVASCRIPT GSAP",
@@ -46,7 +41,7 @@ const Projects = () => {
         },
         {
             title: "DICTIONARY WEB APP",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946705/Portfolio%20Projects/dictionary_o9t5aa.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946705/Portfolio%20Projects/dictionary_o9t5aa.jpg`,
             project: "https://devs-dictionary.vercel.app",
             code: "https://github.com/shahroz769/dictionary-web-app",
             techs: "HTML CSS JAVASCRIPT",
@@ -57,7 +52,7 @@ const Projects = () => {
         },
         {
             title: "GITHUB USER SEARCH WEB APP",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946705/Portfolio%20Projects/dev_finder_vbmeid.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946705/Portfolio%20Projects/dev_finder_vbmeid.jpg`,
             project: "https://devs-devfinder.vercel.app",
             code: "https://github.com/shahroz769/Github-Devfinder",
             techs: "HTML CSS JAVASCRIPT",
@@ -68,7 +63,7 @@ const Projects = () => {
         },
         {
             title: "PLANETS FACT WEBSITE",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946706/Portfolio%20Projects/planets_f29f2r.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946706/Portfolio%20Projects/planets_f29f2r.jpg`,
             project: "https://devs-planets.vercel.app",
             code: "https://github.com/shahroz769/Planets-website",
             techs: "HTML CSS JAVASCRIPT GSAP",
@@ -79,7 +74,7 @@ const Projects = () => {
         },
         {
             title: "BMI CALCULATOR WEB APP",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/bmi_uw2ush.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/bmi_uw2ush.jpg`,
             project: "https://devs-bmicalculator.vercel.app",
             code: "https://github.com/shahroz769/BMI-Calculator",
             techs: "HTML CSS JAVASCRIPT",
@@ -90,7 +85,7 @@ const Projects = () => {
         },
         {
             title: "PASSWORD GENERATOR WEB APP",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/password_generator_zsm7dz.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/password_generator_zsm7dz.jpg`,
             project: "https://devs-passwordgenerator.vercel.app",
             code: "https://github.com/shahroz769/random-password-generator",
             techs: "HTML CSS JAVASCRIPT",
@@ -101,7 +96,7 @@ const Projects = () => {
         },
         {
             title: "AGE CALCULATOR WEB APP",
-            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/age_rkhg21.jpg`,
+            img: `https://res.cloudinary.com/doigzeztt/image/upload/f_avif,c_fill,w_490,h_311/v1705946704/Portfolio%20Projects/age_rkhg21.jpg`,
             project: "https://devs-agecalculator.vercel.app",
             code: "https://github.com/shahroz769/age-calculator",
             techs: "HTML CSS JAVASCRIPT",
@@ -137,7 +132,6 @@ const Projects = () => {
                         code={project.code}
                         shortDescription={project.shortDescription}
                         longDescription={project.longDescription}
-                        imageErrorHandler={imageFormatErrorHandler}
                     />
                 ))}
             </div>

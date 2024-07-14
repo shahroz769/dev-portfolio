@@ -3,7 +3,7 @@ import IconGithub from "@assets/jsx/github";
 import linkedInIcon from "@assets/LinkedIn.svg";
 import twitterIcon from "@assets/twitter.svg";
 import whatsappIcon from "@assets/whatsapp.svg";
-import { useEffect, useState, useContext, useCallback } from "react";
+import { useState, useContext, useCallback } from "react";
 import { LazyMotion, m, domAnimation } from "framer-motion";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
@@ -11,7 +11,6 @@ import circleImage from "@assets/circle.svg";
 
 const Navbar = ({ profileImageBoolean, bottom }) => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
-    const [src, setSrc] = useState();
     const [profileImageLoaded, setProfileImageLoaded] = useState(false);
     const [animationState, setAnimationState] = useState("hidden");
 
@@ -29,26 +28,6 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         },
     };
-
-    const updateImageSrc = useCallback((format) => {
-        const imageFormat = format || "avif";
-        if (window.innerWidth > 768) {
-            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_445,h_720,e_saturation:-10/v1705742111/image-profile-desktop_zn5wf8.webp`;
-        } else if (window.innerWidth > 600 && window.innerWidth <= 768) {
-            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},w_322,h_600,e_saturation:-10/v1705742111/image-profile-tablet_ltkoqr.webp`;
-        } else {
-            return `https://res.cloudinary.com/doigzeztt/image/upload/f_${imageFormat},e_saturation:-10/v1706038916/image-profile-mobile_rbg44m.jpg`;
-        }
-    }, []);
-
-    useEffect(() => {
-        setSrc(updateImageSrc());
-        function handleResize() {
-            setSrc(updateImageSrc());
-        }
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [updateImageSrc]);
 
     return (
         <header
@@ -76,8 +55,10 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseEnter={() => mouseEnterHandler("small")}
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "pointer", display: "flex" }}
+                        aria-label="Github Profile"
                     >
-                        <IconGithub />
+                        <IconGithub aria-hidden="true" />
+                        <span className="sr-only">Github</span>
                     </a>
                 </Reveal>
                 <Reveal>
@@ -87,12 +68,14 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseEnter={() => mouseEnterHandler("small")}
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "pointer", display: "flex" }}
+                        aria-label="LinkedIn Profile"
                     >
                         <img
                             style={{ width: "25px", height: "24px" }}
                             src={linkedInIcon}
-                            alt="linkedIn"
+                            alt="LinkedIn"
                         />
+                        <span className="sr-only">LinkedIn</span>
                     </a>
                 </Reveal>
                 <Reveal>
@@ -102,12 +85,14 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseEnter={() => mouseEnterHandler("small")}
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "pointer", display: "flex" }}
+                        aria-label="WhatsApp"
                     >
                         <img
                             style={{ width: "26px", height: "22px" }}
                             src={whatsappIcon}
-                            alt="twitter"
+                            alt="Whatsapp"
                         />
+                        <span className="sr-only">WhatsApp</span>
                     </a>
                 </Reveal>
                 <Reveal>
@@ -117,12 +102,14 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         onMouseEnter={() => mouseEnterHandler("small")}
                         onMouseLeave={mouseLeaveHandler}
                         style={{ cursor: "pointer", display: "flex" }}
+                        aria-label="Twitter Profile"
                     >
                         <img
                             style={{ width: "25px", height: "24px" }}
                             src={twitterIcon}
-                            alt="twitter"
+                            alt="Twitter"
                         />
+                        <span className="sr-only">Twitter</span>
                     </a>
                 </Reveal>
             </div>
@@ -142,7 +129,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                                 duration: 1.5,
                             }}
                             fetchpriority="high"
-                            src={src}
+                            src="https://res.cloudinary.com/doigzeztt/image/upload/f_avif,w_445,h_720,e_saturation:-10/v1705742111/image-profile-desktop_zn5wf8.webp"
                             alt="Profile Picture"
                             onLoad={() => {
                                 handleImageLoad();
@@ -150,9 +137,9 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                             }}
                             onError={() => {
                                 setProfileImageLoaded(true);
-                                setSrc(updateImageSrc("webp"));
                             }}
                         />
+
                         <m.div
                             className="circle1"
                             initial={{ opacity: 0 }}
