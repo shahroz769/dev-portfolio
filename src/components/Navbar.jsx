@@ -8,6 +8,7 @@ import { LazyMotion, m, domAnimation } from "framer-motion";
 import { CursorContext } from "@context/CursorContext";
 import Reveal from "@components/Reveal";
 import circleImage from "@assets/circle.svg";
+import profileImage from "@assets/image-profile.avif"
 
 const Navbar = ({ profileImageBoolean, bottom }) => {
     const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -129,7 +130,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                                 duration: 1.5,
                             }}
                             fetchpriority="high"
-                            src="../assets/image-profile.avif"
+                            src={profileImage}
                             alt="Profile Picture"
                             onLoad={() => {
                                 handleImageLoad();
