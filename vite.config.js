@@ -12,4 +12,7 @@ export default defineConfig({
             "@context": resolve(__dirname, "./src/context"),
         },
     },
+    build: {
+        assetsInlineLimit: 0,
+    },
 });
