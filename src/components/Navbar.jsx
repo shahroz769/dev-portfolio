@@ -129,7 +129,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                                 duration: 1.5,
                             }}
                             fetchpriority="high"
-                            src="https://res.cloudinary.com/doigzeztt/image/upload/f_avif,w_445,h_720,e_saturation:-10/v1705742111/image-profile-desktop_zn5wf8.webp"
+                            src="../assets/image-profile.avif"
                             alt="Profile Picture"
                             onLoad={() => {
                                 handleImageLoad();
