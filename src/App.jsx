@@ -1,37 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { CursorContext } from "@context/CursorContext";
-import { Toaster } from "react-hot-toast";
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import Home from "@pages/Home";
 
 function App() {
     const { cursorVariants, cursorBg, isVisible } = useContext(CursorContext);
-    const [systemTheme, setSystemTheme] = useState(
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light"
-    );
     const [hasPointingDevice, setHasPointingDevice] = useState(
         window.matchMedia("(pointer:fine)").matches
     );
 
     useEffect(() => {
-        const favicon = document.getElementById("favicon");
-        if (favicon) {
-            favicon.href =
-                systemTheme === "dark"
-                    ? "https://res.cloudinary.com/dke5jqhus/image/upload/f_webp/v1705847763/Portfolio/oklvsql2vlkze7p3ggmq.svg"
-                    : "https://res.cloudinary.com/dke5jqhus/image/upload/f_webp/v1705847763/Portfolio/skiowwakseerwteqvulo.svg";
-        }
-    }, [systemTheme]);
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-        const handleChange = () => {
-            setSystemTheme(mediaQuery.matches ? "dark" : "light");
-        };
-        mediaQuery.addEventListener("change", handleChange);
-
         const pointingDeviceQuery = window.matchMedia("(pointer:fine)");
         const handlePointingDeviceChange = () => {
             setHasPointingDevice(pointingDeviceQuery.matches);
@@ -52,15 +30,6 @@ function App() {
 
     return (
         <>
-            <Toaster
-                toastOptions={{
-                    style: {
-                        background: "var(--white-60-)",
-                        color: "var(--black-30-)",
-                    },
-                    position: "bottom-center",
-                }}
-            />
             <Home />
             {hasPointingDevice && (
                 <LazyMotion features={domAnimation}>
