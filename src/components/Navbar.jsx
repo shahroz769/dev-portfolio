@@ -34,17 +34,17 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
             className="nav-header"
             style={{ paddingBottom: bottom || 0 + "px" }}
         >
-            <div>
+            <div className="logo-parent">
                 <Reveal>
-                    <h3
+                    <h1
                         className="logo"
                         onMouseEnter={() => mouseEnterHandler("medium")}
                         onMouseLeave={mouseLeaveHandler}
-                        style={{ cursor: "default" }}
+                        style={{ cursor: "default", lineHeight: "2rem" }}
                     >
                         shahroz
                         <span style={{ color: "var(--accent-)" }}>ahmed</span>
-                    </h3>
+                    </h1>
                 </Reveal>
             </div>
             <div className="icons">
@@ -73,7 +73,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         <img
                             style={{ width: "25px", height: "24px" }}
                             src={linkedInIcon}
-                            alt="LinkedIn"
+                            alt=""
                         />
                         <span className="sr-only">LinkedIn</span>
                     </a>
@@ -90,7 +90,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         <img
                             style={{ width: "26px", height: "22px" }}
                             src={whatsappIcon}
-                            alt="Whatsapp"
+                            alt=""
                         />
                         <span className="sr-only">WhatsApp</span>
                     </a>
@@ -107,7 +107,7 @@ const Navbar = ({ profileImageBoolean, bottom }) => {
                         <img
                             style={{ width: "25px", height: "24px" }}
                             src={twitterIcon}
-                            alt="Twitter"
+                            alt=""
                         />
                         <span className="sr-only">Twitter</span>
                     </a>

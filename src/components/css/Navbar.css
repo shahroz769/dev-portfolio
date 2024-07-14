@@ -6,9 +6,10 @@
     position: relative;
 }
 
-.nav-header .logo {
+.nav-header .logo-parent h1 {
     font-weight: 700;
     font-size: 2rem;
+    letter-spacing: normal;
 }
 
 .nav-header .icons {
@@ -113,5 +114,9 @@
     }
     .circle1 {
         display: none;
+    }
+
+    .nav-header .logo-parent h1 {
+        line-height: 1.625rem !important;
     }
 }
