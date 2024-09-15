@@ -1,21 +1,21 @@
-import Skill from "@components/Skill";
-import "@components/css/Skills.css";
+import Skill from '@components/Skill';
+import '@components/css/Skills.css';
 
 const Skills = () => {
     const skills = [
-        { title: "HTML", exp: "6 Months Experience" },
-        { title: "CSS", exp: "6 Months Experience" },
-        { title: "Javascript", exp: "6 Months Experience" },
-        { title: "Firebase", exp: "6 Months Experience" },
-        { title: "GSAP", exp: "6 Months Experience" },
-        { title: "ReactJS", exp: "3 Months Experience" },
-        { title: "NodeJS", exp: "3 Months Experience" },
-        { title: "ExpressJS", exp: "3 Months Experience" },
-        { title: "MongoDB", exp: "3 Months Experience" },
-        { title: "Framer-Motion", exp: "2 Months Experience" },
+        { title: 'HTML', exp: '1.5 Years Experience' },
+        { title: 'CSS', exp: '1.5 Years Experience' },
+        { title: 'Javascript', exp: '1.5 Years Experience' },
+        { title: 'Firebase', exp: '1.5 Years Experience' },
+        { title: 'GSAP', exp: '1.5 Years Experience' },
+        { title: 'ReactJS', exp: '1 Year Experience' },
+        { title: 'NodeJS', exp: '1 Year Experience' },
+        { title: 'ExpressJS', exp: '1 Year Experience' },
+        { title: 'MongoDB', exp: '1 Year Experience' },
+        { title: 'Framer-Motion', exp: '6 Months Experience' },
     ];
     return (
-        <div className="skills-container">
+        <div className='skills-container'>
             {skills.map((skill, ind) => (
                 <Skill key={ind} title={skill.title} exp={skill.exp} />
             ))}
